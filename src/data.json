@@ -1,0 +1,1511 @@
+[
+    {
+        "nombre": "estudiante",
+        "ambitos": {
+            "Ex Alumno": {
+                "tematicas": {
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EA_OT_6_EET"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Validación de Títulos": {
+                        "submotivos": {
+                            "¿Cómo puedo validar un título?": {
+                                "nombre": "¿Cómo puedo validar un título?",
+                                "label": "EA_VT_1_EEX"
+                            },
+                            "Dudas": {
+                                "nombre": "Dudas",
+                                "label": "EA_VT_2_EEX"
+                            }
+                        },
+                        "nombre": "Validación de Títulos"
+                    },
+                    "Certificados Ex alumnos": {
+                        "submotivos": {
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "EA_CEA_4_EET"
+                            },
+                            "¿Qué certificados puedo solicitar y dónde?": {
+                                "nombre": "¿Qué certificados puedo solicitar y dónde?",
+                                "label": "EA_CEA_3_EET"
+                            }
+                        },
+                        "nombre": "Certificados Ex alumnos"
+                    }
+                },
+                "nombre": "Ex Alumno"
+            },
+            "Opinión (Buzón)": {
+                "tematicas": {
+                    "Reclamos": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "OP_RE_2_EEX"
+                            }
+                        },
+                        "nombre": "Reclamos"
+                    },
+                    "Felicitaciones": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "OP_FL_3_EEX"
+                            }
+                        },
+                        "nombre": "Felicitaciones"
+                    },
+                    "Sugerencias": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "OP_SG_1_EEX"
+                            }
+                        },
+                        "nombre": "Sugerencias"
+                    }
+                },
+                "nombre": "Opinión (Buzón)"
+            },
+            "Económicas": {
+                "tematicas": {
+                    "Deuda": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_DD_1_EEF"
+                            }
+                        },
+                        "nombre": "Deuda"
+                    },
+                    "Cobranza": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_CB_2_EEF"
+                            }
+                        },
+                        "nombre": "Cobranza"
+                    },
+                    "Formas de Pagos": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_FP_4_EF"
+                            }
+                        },
+                        "nombre": "Formas de Pagos"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_OT_6_EF"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Portal de Pago": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_PP_5_EF"
+                            }
+                        },
+                        "nombre": "Portal de Pago"
+                    },
+                    "Devoluciones": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_DEV_3_EF"
+                            }
+                        },
+                        "nombre": "Devoluciones"
+                    }
+                },
+                "nombre": "Económicas"
+            },
+            "Académicos / Curriculares": {
+                "tematicas": {
+                    "Consultar malla": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AC_CM_10_E"
+                            }
+                        },
+                        "nombre": "Consultar malla"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AC_OT_11_E"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Certificados Alumnos": {
+                        "submotivos": {
+                            "¿Qué certificados puedo solicitar y dónde?": {
+                                "nombre": "¿Qué certificados puedo solicitar y dónde?",
+                                "label": "AC_CA_4_E"
+                            },
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "AC_CA_5_E"
+                            }
+                        },
+                        "nombre": "Certificados Alumnos"
+                    },
+                    "Aprobación de Ramos": {
+                        "submotivos": {
+                            "Requisitos de aprobación": {
+                                "nombre": "Requisitos de aprobación",
+                                "label": "AC_AR_3_E"
+                            }
+                        },
+                        "nombre": "Aprobación de Ramos"
+                    },
+                    "Reglamento Académico": {
+                        "submotivos": {
+                            "¿Dónde revisarlo?": {
+                                "nombre": "¿Dónde revisarlo?",
+                                "label": "AC_RA_1_E"
+                            },
+                            "Dudas": {
+                                "nombre": "Dudas",
+                                "label": "AC_RA_2_E"
+                            }
+                        },
+                        "nombre": "Reglamento Académico"
+                    },
+                    "Certificados Ex alumnos": {
+                        "submotivos": {
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "AC_CEA_7_EEX"
+                            },
+                            "¿Qué certificados puedo solicitar y dónde?": {
+                                "nombre": "¿Qué certificados puedo solicitar y dónde?",
+                                "label": "AC_CEA_6_EEX"
+                            }
+                        },
+                        "nombre": "Certificados Ex alumnos"
+                    },
+                    "Solicitudes Académicas": {
+                        "submotivos": {
+                            "¿Que solicitudes puedo ingresar y dónde?": {
+                                "nombre": "¿Que solicitudes puedo ingresar y dónde?",
+                                "label": "AC_SA_8_E"
+                            },
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "AC_DO_9_E"
+                            }
+                        },
+                        "nombre": "Solicitudes Académicas"
+                    }
+                },
+                "nombre": "Académicos / Curriculares"
+            },
+            "Titulación": {
+                "tematicas": {
+                    "Proceso Titulación": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "TT_PT_1_EEG"
+                            }
+                        },
+                        "nombre": "Proceso Titulación"
+                    },
+                    "Prácticas": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "TT_PR_2_EEG"
+                            }
+                        },
+                        "nombre": "Prácticas"
+                    }
+                },
+                "nombre": "Titulación"
+            },
+            "Empleabilidad": {
+                "tematicas": {
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EMP_OT_4_EET"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Bolsa de Trabajo": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EMP_BT_1_EET"
+                            }
+                        },
+                        "nombre": "Bolsa de Trabajo"
+                    },
+                    "Feria Laboral": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EMP_FL_2_EET"
+                            }
+                        },
+                        "nombre": "Feria Laboral"
+                    },
+                    "Centro Desarrollo Laboral (CDL)": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EMP_CDL_3_EET"
+                            }
+                        },
+                        "nombre": "Centro Desarrollo Laboral (CDL)"
+                    }
+                },
+                "nombre": "Empleabilidad"
+            },
+            "Apoyo a mi Progresión": {
+                "tematicas": {
+                    "Nivelación": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AP_NV_3_E"
+                            }
+                        },
+                        "nombre": "Nivelación"
+                    },
+                    "Clínicas Académicas": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AP_CA_5_E"
+                            }
+                        },
+                        "nombre": "Clínicas Académicas"
+                    },
+                    "Talleres de Apoyo": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AP_TA_4_E"
+                            }
+                        },
+                        "nombre": "Talleres de Apoyo"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AP_OT_6_E"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Atención Tutorial": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AP_AT_2_E"
+                            }
+                        },
+                        "nombre": "Atención Tutorial"
+                    },
+                    "Evaluación Diagnóstica": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AP_ED_1_E"
+                            }
+                        },
+                        "nombre": "Evaluación Diagnóstica"
+                    }
+                },
+                "nombre": "Apoyo a mi Progresión"
+            },
+            "Vida Estudiantil": {
+                "tematicas": {
+                    "Programa de Bienestar y Salud Mental": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "VE_PBS_1_E"
+                            }
+                        },
+                        "nombre": "Programa de Bienestar y Salud Mental"
+                    },
+                    "Descuentos y Beneficios": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "VE_DB_3_EEX"
+                            }
+                        },
+                        "nombre": "Descuentos y Beneficios"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "VE_OT_4_EEX"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Actividades Sedes": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "VE_AS_2_E"
+                            }
+                        },
+                        "nombre": "Actividades Sedes"
+                    }
+                },
+                "nombre": "Vida Estudiantil"
+            },
+            "Seguros": {
+                "tematicas": {
+                    "Seguro Accidentes": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "SG_SA_1_ET"
+                            }
+                        },
+                        "nombre": "Seguro Accidentes"
+                    },
+                    "Seguro Fallecimiento Fiador": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "SG_SFF_2_E"
+                            }
+                        },
+                        "nombre": "Seguro Fallecimiento Fiador"
+                    }
+                },
+                "nombre": "Seguros"
+            },
+            "Admisión y Matrícula": {
+                "tematicas": {
+                    "Mis Asignaturas": {
+                        "submotivos": {
+                            "Toma de carga - horarios": {
+                                "nombre": "Toma de carga - horarios",
+                                "label": "AA_AS_8_E"
+                            }
+                        },
+                        "nombre": "Mis Asignaturas"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AA_OT_21_EPIT"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Estudiante antiguo": {
+                        "submotivos": {
+                            "Renovación de beneficios": {
+                                "nombre": "Renovación de beneficios",
+                                "label": "AA_EA_19_E"
+                            },
+                            "Toma de carga - horarios": {
+                                "nombre": "Toma de carga - horarios",
+                                "label": "AA_EA_8_E"
+                            },
+                            "Cambio de carrera o jornada": {
+                                "nombre": "Cambio de carrera o jornada",
+                                "label": "AA_EA_18_E"
+                            },
+                            "Actualización de información": {
+                                "nombre": "Actualización de información",
+                                "label": "AA_EA_20_E"
+                            }
+                        },
+                        "nombre": "Estudiante antiguo"
+                    },
+                    "Documentación y Requisitos": {
+                        "submotivos": {
+                            "Requisitos Fiador": {
+                                "nombre": "Requisitos Fiador",
+                                "label": "AA_DA_2_EPIT"
+                            },
+                            "Requisitos Estudiantes": {
+                                "nombre": "Requisitos Estudiantes",
+                                "label": "AA_DA_1_EPIT"
+                            },
+                            "Estudiantes extranjeros": {
+                                "nombre": "Estudiantes extranjeros",
+                                "label": "AA_DA_3_EPIT"
+                            }
+                        },
+                        "nombre": "Documentación y Requisitos"
+                    },
+                    "Fechas": {
+                        "submotivos": {
+                            "Evaluación diagnóstica": {
+                                "nombre": "Evaluación diagnóstica",
+                                "label": "AA_FE_6_EPIT"
+                            },
+                            "Nivelaciones": {
+                                "nombre": "Nivelaciones",
+                                "label": "AA_FE_7_EPIT"
+                            },
+                            "Inicio de clases": {
+                                "nombre": "Inicio de clases",
+                                "label": "AA_FE_5_EPIT"
+                            },
+                            "Plazos matrícula": {
+                                "nombre": "Plazos matrícula",
+                                "label": "AA_FE_4_EPIT"
+                            },
+                            "Toma de carga - horarios": {
+                                "nombre": "Toma de carga - horarios",
+                                "label": "AA_FE_8_EPIT"
+                            }
+                        },
+                        "nombre": "Fechas"
+                    },
+                    "Reconocimiento Aprendizajes": {
+                        "submotivos": {
+                            "Reconocimiento Aprendizajes": {
+                                "nombre": "Reconocimiento Aprendizajes",
+                                "label": "AA_RA_15_EPIT"
+                            },
+                            "Articulación EMTP": {
+                                "nombre": "Articulación EMTP",
+                                "label": "AA_RA_16_EPIT"
+                            }
+                        },
+                        "nombre": "Reconocimiento Aprendizajes"
+                    },
+                    "Carreras": {
+                        "submotivos": {
+                            "Información de carreras y mallas": {
+                                "nombre": "Información de carreras y mallas",
+                                "label": "AA_CR_12_EPIT"
+                            },
+                            "Sede": {
+                                "nombre": "Sede",
+                                "label": "AA_CR_11_EPIT"
+                            },
+                            "Jornadas y modalidad": {
+                                "nombre": "Jornadas y modalidad",
+                                "label": "AA_CR_13_EPIT"
+                            }
+                        },
+                        "nombre": "Carreras"
+                    }
+                },
+                "nombre": "Admisión y Matrícula"
+            },
+            "Financiamiento Estudiantil": {
+                "tematicas": {
+                    "TNE (Pase Escolar)": {
+                        "submotivos": {
+                            "Pago": {
+                                "nombre": "Pago",
+                                "label": "FE_TNE_11_E"
+                            },
+                            "Plazos postulación": {
+                                "nombre": "Plazos postulación",
+                                "label": "FE_TNE_10_EPIT"
+                            },
+                            "Cargar foto": {
+                                "nombre": "Cargar foto",
+                                "label": "FE_TNE_12_E"
+                            }
+                        },
+                        "nombre": "TNE (Pase Escolar)"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "Quiero suspender mis beneficios": {
+                                "nombre": "Quiero suspender mis beneficios",
+                                "label": "FE_OT_15_E"
+                            },
+                            "Acreditación socioeconómica": {
+                                "nombre": "Acreditación socioeconómica",
+                                "label": "FE_OT_13_E"
+                            },
+                            "Perdí mi beneficio": {
+                                "nombre": "Perdí mi beneficio",
+                                "label": "FE_OT_14_E"
+                            },
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "FE_OT_16_EPIT"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Tipos de beneficio": {
+                        "submotivos": {
+                            "BAES": {
+                                "nombre": "BAES",
+                                "label": "FE_TB_4_EPIT"
+                            },
+                            "Becas internas": {
+                                "nombre": "Becas internas",
+                                "label": "FE_TB_5_EPIT"
+                            },
+                            "Becas Arancel Mineduc": {
+                                "nombre": "Becas Arancel Mineduc",
+                                "label": "FE_TB_3_EPIT"
+                            },
+                            "CAE": {
+                                "nombre": "CAE",
+                                "label": "FE_TB_2_EPIT"
+                            },
+                            "Gratuidad": {
+                                "nombre": "Gratuidad",
+                                "label": "FE_TB_1_EPIT"
+                            }
+                        },
+                        "nombre": "Tipos de beneficio"
+                    },
+                    "Fecha de resultados": {
+                        "submotivos": {
+                            "Beneficio Internos": {
+                                "nombre": "Beneficio Internos",
+                                "label": "FE_FP_8_EPIT"
+                            },
+                            "Becas y Beneficios Mineduc": {
+                                "nombre": "Becas y Beneficios Mineduc",
+                                "label": "FE_FP_9_EPIT"
+                            }
+                        },
+                        "nombre": "Fecha de resultados"
+                    },
+                    "Fecha postulaciones": {
+                        "submotivos": {
+                            "Becas y Beneficios Mineduc": {
+                                "nombre": "Becas y Beneficios Mineduc",
+                                "label": "FE_FP_7_EPIT"
+                            },
+                            "Beneficio Internos": {
+                                "nombre": "Beneficio Internos",
+                                "label": "FE_FP_6_EPIT"
+                            }
+                        },
+                        "nombre": "Fecha postulaciones"
+                    }
+                },
+                "nombre": "Financiamiento Estudiantil"
+            },
+            "Cuenta Inacap": {
+                "tematicas": {
+                    "Clave": {
+                        "submotivos": {
+                            "Recuperar contraseña": {
+                                "nombre": "Recuperar contraseña",
+                                "label": "CI_CL_1_EEX"
+                            },
+                            "Cambio contraseña": {
+                                "nombre": "Cambio contraseña",
+                                "label": "CI_CL_2_EEX"
+                            }
+                        },
+                        "nombre": "Clave"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "CI_OT_6_E"
+                            },
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "CI_OT_7_EEX"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Acceso": {
+                        "submotivos": {
+                            "Intranet": {
+                                "nombre": "Intranet",
+                                "label": "CI_AC_4_EEX"
+                            },
+                            "Correo": {
+                                "nombre": "Correo",
+                                "label": "CI_AC_3_EEX"
+                            },
+                            "Sala Virtual": {
+                                "nombre": "Sala Virtual",
+                                "label": "CI_AC_5_E"
+                            }
+                        },
+                        "nombre": "Acceso"
+                    }
+                },
+                "nombre": "Cuenta Inacap"
+            }
+        }
+    },
+    {
+        "nombre": "interesado",
+        "ambitos": {
+            "Admisión y Matrícula": {
+                "tematicas": {
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AA_OT_21_EPIT"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Documentación y Requisitos": {
+                        "submotivos": {
+                            "Requisitos Fiador": {
+                                "nombre": "Requisitos Fiador",
+                                "label": "AA_DA_2_EPIT"
+                            },
+                            "Requisitos Estudiantes": {
+                                "nombre": "Requisitos Estudiantes",
+                                "label": "AA_DA_1_EPIT"
+                            },
+                            "Estudiantes extranjeros": {
+                                "nombre": "Estudiantes extranjeros",
+                                "label": "AA_DA_3_EPIT"
+                            }
+                        },
+                        "nombre": "Documentación y Requisitos"
+                    },
+                    "Fechas": {
+                        "submotivos": {
+                            "Evaluación diagnóstica": {
+                                "nombre": "Evaluación diagnóstica",
+                                "label": "AA_FE_6_EPIT"
+                            },
+                            "Nivelaciones": {
+                                "nombre": "Nivelaciones",
+                                "label": "AA_FE_7_EPIT"
+                            },
+                            "Inicio de clases": {
+                                "nombre": "Inicio de clases",
+                                "label": "AA_FE_5_EPIT"
+                            },
+                            "Plazos matrícula": {
+                                "nombre": "Plazos matrícula",
+                                "label": "AA_FE_4_EPIT"
+                            },
+                            "Toma de carga - horarios": {
+                                "nombre": "Toma de carga - horarios",
+                                "label": "AA_FE_8_EPIT"
+                            }
+                        },
+                        "nombre": "Fechas"
+                    },
+                    "Reconocimiento Aprendizajes": {
+                        "submotivos": {
+                            "Reconocimiento Aprendizajes": {
+                                "nombre": "Reconocimiento Aprendizajes",
+                                "label": "AA_RA_15_EPIT"
+                            },
+                            "Articulación EMTP": {
+                                "nombre": "Articulación EMTP",
+                                "label": "AA_RA_16_EPIT"
+                            }
+                        },
+                        "nombre": "Reconocimiento Aprendizajes"
+                    },
+                    "Carreras": {
+                        "submotivos": {
+                            "Información de carreras y mallas": {
+                                "nombre": "Información de carreras y mallas",
+                                "label": "AA_CR_12_EPIT"
+                            },
+                            "Sede": {
+                                "nombre": "Sede",
+                                "label": "AA_CR_11_EPIT"
+                            },
+                            "Jornadas y modalidad": {
+                                "nombre": "Jornadas y modalidad",
+                                "label": "AA_CR_13_EPIT"
+                            }
+                        },
+                        "nombre": "Carreras"
+                    }
+                },
+                "nombre": "Admisión y Matrícula"
+            },
+            "Financiamiento Estudiantil": {
+                "tematicas": {
+                    "TNE (Pase Escolar)": {
+                        "submotivos": {
+                            "Plazos postulación": {
+                                "nombre": "Plazos postulación",
+                                "label": "FE_TNE_10_EPIT"
+                            }
+                        },
+                        "nombre": "TNE (Pase Escolar)"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "FE_OT_16_EPIT"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Tipos de beneficio": {
+                        "submotivos": {
+                            "BAES": {
+                                "nombre": "BAES",
+                                "label": "FE_TB_4_EPIT"
+                            },
+                            "Becas internas": {
+                                "nombre": "Becas internas",
+                                "label": "FE_TB_5_EPIT"
+                            },
+                            "Becas Arancel Mineduc": {
+                                "nombre": "Becas Arancel Mineduc",
+                                "label": "FE_TB_3_EPIT"
+                            },
+                            "CAE": {
+                                "nombre": "CAE",
+                                "label": "FE_TB_2_EPIT"
+                            },
+                            "Gratuidad": {
+                                "nombre": "Gratuidad",
+                                "label": "FE_TB_1_EPIT"
+                            }
+                        },
+                        "nombre": "Tipos de beneficio"
+                    },
+                    "Fecha de resultados": {
+                        "submotivos": {
+                            "Beneficio Internos": {
+                                "nombre": "Beneficio Internos",
+                                "label": "FE_FP_8_EPIT"
+                            },
+                            "Becas y Beneficios Mineduc": {
+                                "nombre": "Becas y Beneficios Mineduc",
+                                "label": "FE_FP_9_EPIT"
+                            }
+                        },
+                        "nombre": "Fecha de resultados"
+                    },
+                    "Fecha postulaciones": {
+                        "submotivos": {
+                            "Becas y Beneficios Mineduc": {
+                                "nombre": "Becas y Beneficios Mineduc",
+                                "label": "FE_FP_7_EPIT"
+                            },
+                            "Beneficio Internos": {
+                                "nombre": "Beneficio Internos",
+                                "label": "FE_FP_6_EPIT"
+                            }
+                        },
+                        "nombre": "Fecha postulaciones"
+                    }
+                },
+                "nombre": "Financiamiento Estudiantil"
+            }
+        }
+    },
+    {
+        "nombre": "postulante",
+        "ambitos": {
+            "Admisión y Matrícula": {
+                "tematicas": {
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AA_OT_21_EPIT"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Documentación y Requisitos": {
+                        "submotivos": {
+                            "Requisitos Fiador": {
+                                "nombre": "Requisitos Fiador",
+                                "label": "AA_DA_2_EPIT"
+                            },
+                            "Requisitos Estudiantes": {
+                                "nombre": "Requisitos Estudiantes",
+                                "label": "AA_DA_1_EPIT"
+                            },
+                            "Estudiantes extranjeros": {
+                                "nombre": "Estudiantes extranjeros",
+                                "label": "AA_DA_3_EPIT"
+                            }
+                        },
+                        "nombre": "Documentación y Requisitos"
+                    },
+                    "Fechas": {
+                        "submotivos": {
+                            "Evaluación diagnóstica": {
+                                "nombre": "Evaluación diagnóstica",
+                                "label": "AA_FE_6_EPIT"
+                            },
+                            "Nivelaciones": {
+                                "nombre": "Nivelaciones",
+                                "label": "AA_FE_7_EPIT"
+                            },
+                            "Inicio de clases": {
+                                "nombre": "Inicio de clases",
+                                "label": "AA_FE_5_EPIT"
+                            },
+                            "Plazos matrícula": {
+                                "nombre": "Plazos matrícula",
+                                "label": "AA_FE_4_EPIT"
+                            },
+                            "Toma de carga - horarios": {
+                                "nombre": "Toma de carga - horarios",
+                                "label": "AA_FE_8_EPIT"
+                            }
+                        },
+                        "nombre": "Fechas"
+                    },
+                    "Lista de espera": {
+                        "submotivos": {
+                            "Ver el estado de mi postulación": {
+                                "nombre": "Ver el estado de mi postulación",
+                                "label": "AA_LE_9_PT"
+                            },
+                            "Eliminar postulación": {
+                                "nombre": "Eliminar postulación",
+                                "label": "AA_LE_10_P"
+                            }
+                        },
+                        "nombre": "Lista de espera"
+                    },
+                    "Reconocimiento Aprendizajes": {
+                        "submotivos": {
+                            "Reconocimiento Aprendizajes": {
+                                "nombre": "Reconocimiento Aprendizajes",
+                                "label": "AA_RA_15_EPIT"
+                            },
+                            "Articulación EMTP": {
+                                "nombre": "Articulación EMTP",
+                                "label": "AA_RA_16_EPIT"
+                            }
+                        },
+                        "nombre": "Reconocimiento Aprendizajes"
+                    },
+                    "Carreras": {
+                        "submotivos": {
+                            "Información de carreras y mallas": {
+                                "nombre": "Información de carreras y mallas",
+                                "label": "AA_CR_12_EPIT"
+                            },
+                            "Sede": {
+                                "nombre": "Sede",
+                                "label": "AA_CR_11_EPIT"
+                            },
+                            "Jornadas y modalidad": {
+                                "nombre": "Jornadas y modalidad",
+                                "label": "AA_CR_13_EPIT"
+                            }
+                        },
+                        "nombre": "Carreras"
+                    }
+                },
+                "nombre": "Admisión y Matrícula"
+            },
+            "Financiamiento Estudiantil": {
+                "tematicas": {
+                    "TNE (Pase Escolar)": {
+                        "submotivos": {
+                            "Plazos postulación": {
+                                "nombre": "Plazos postulación",
+                                "label": "FE_TNE_10_EPIT"
+                            }
+                        },
+                        "nombre": "TNE (Pase Escolar)"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "FE_OT_16_EPIT"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Tipos de beneficio": {
+                        "submotivos": {
+                            "BAES": {
+                                "nombre": "BAES",
+                                "label": "FE_TB_4_EPIT"
+                            },
+                            "Becas internas": {
+                                "nombre": "Becas internas",
+                                "label": "FE_TB_5_EPIT"
+                            },
+                            "Becas Arancel Mineduc": {
+                                "nombre": "Becas Arancel Mineduc",
+                                "label": "FE_TB_3_EPIT"
+                            },
+                            "CAE": {
+                                "nombre": "CAE",
+                                "label": "FE_TB_2_EPIT"
+                            },
+                            "Gratuidad": {
+                                "nombre": "Gratuidad",
+                                "label": "FE_TB_1_EPIT"
+                            }
+                        },
+                        "nombre": "Tipos de beneficio"
+                    },
+                    "Fecha de resultados": {
+                        "submotivos": {
+                            "Beneficio Internos": {
+                                "nombre": "Beneficio Internos",
+                                "label": "FE_FP_8_EPIT"
+                            },
+                            "Becas y Beneficios Mineduc": {
+                                "nombre": "Becas y Beneficios Mineduc",
+                                "label": "FE_FP_9_EPIT"
+                            }
+                        },
+                        "nombre": "Fecha de resultados"
+                    },
+                    "Fecha postulaciones": {
+                        "submotivos": {
+                            "Becas y Beneficios Mineduc": {
+                                "nombre": "Becas y Beneficios Mineduc",
+                                "label": "FE_FP_7_EPIT"
+                            },
+                            "Beneficio Internos": {
+                                "nombre": "Beneficio Internos",
+                                "label": "FE_FP_6_EPIT"
+                            }
+                        },
+                        "nombre": "Fecha postulaciones"
+                    }
+                },
+                "nombre": "Financiamiento Estudiantil"
+            }
+        }
+    },
+    {
+        "nombre": "tercero",
+        "ambitos": {
+            "Seguros": {
+                "tematicas": {
+                    "Seguro Accidentes": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "SG_SA_1_ET"
+                            }
+                        },
+                        "nombre": "Seguro Accidentes"
+                    }
+                },
+                "nombre": "Seguros"
+            },
+            "Económicas": {
+                "tematicas": {
+                    "Deuda": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_DD_1_EEF"
+                            }
+                        },
+                        "nombre": "Deuda"
+                    },
+                    "Cobranza": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_CB_2_EEF"
+                            }
+                        },
+                        "nombre": "Cobranza"
+                    },
+                    "Formas de Pagos": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_FP_4_EF"
+                            }
+                        },
+                        "nombre": "Formas de Pagos"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_OT_6_EF"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Portal de Pago": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_PP_5_EF"
+                            }
+                        },
+                        "nombre": "Portal de Pago"
+                    },
+                    "Devoluciones": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_DEV_3_EF"
+                            }
+                        },
+                        "nombre": "Devoluciones"
+                    }
+                },
+                "nombre": "Económicas"
+            },
+            "Admisión y Matrícula": {
+                "tematicas": {
+                    "Lista de espera": {
+                        "submotivos": {
+                            "Ver el estado de mi postulación": {
+                                "nombre": "Ver el estado de mi postulación",
+                                "label": "AA_LE_9_PT"
+                            }
+                        },
+                        "nombre": "Lista de espera"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "AA_OT_21_EPIT"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Documentación y Requisitos": {
+                        "submotivos": {
+                            "Requisitos Fiador": {
+                                "nombre": "Requisitos Fiador",
+                                "label": "AA_DA_2_EPIT"
+                            },
+                            "Requisitos Estudiantes": {
+                                "nombre": "Requisitos Estudiantes",
+                                "label": "AA_DA_1_EPIT"
+                            },
+                            "Estudiantes extranjeros": {
+                                "nombre": "Estudiantes extranjeros",
+                                "label": "AA_DA_3_EPIT"
+                            }
+                        },
+                        "nombre": "Documentación y Requisitos"
+                    },
+                    "Fechas": {
+                        "submotivos": {
+                            "Evaluación diagnóstica": {
+                                "nombre": "Evaluación diagnóstica",
+                                "label": "AA_FE_6_EPIT"
+                            },
+                            "Nivelaciones": {
+                                "nombre": "Nivelaciones",
+                                "label": "AA_FE_7_EPIT"
+                            },
+                            "Inicio de clases": {
+                                "nombre": "Inicio de clases",
+                                "label": "AA_FE_5_EPIT"
+                            },
+                            "Plazos matrícula": {
+                                "nombre": "Plazos matrícula",
+                                "label": "AA_FE_4_EPIT"
+                            },
+                            "Toma de carga - horarios": {
+                                "nombre": "Toma de carga - horarios",
+                                "label": "AA_FE_8_EPIT"
+                            }
+                        },
+                        "nombre": "Fechas"
+                    },
+                    "Reconocimiento Aprendizajes": {
+                        "submotivos": {
+                            "Reconocimiento Aprendizajes": {
+                                "nombre": "Reconocimiento Aprendizajes",
+                                "label": "AA_RA_15_EPIT"
+                            },
+                            "Articulación EMTP": {
+                                "nombre": "Articulación EMTP",
+                                "label": "AA_RA_16_EPIT"
+                            }
+                        },
+                        "nombre": "Reconocimiento Aprendizajes"
+                    },
+                    "Carreras": {
+                        "submotivos": {
+                            "Información de carreras y mallas": {
+                                "nombre": "Información de carreras y mallas",
+                                "label": "AA_CR_12_EPIT"
+                            },
+                            "Sede": {
+                                "nombre": "Sede",
+                                "label": "AA_CR_11_EPIT"
+                            },
+                            "Jornadas y modalidad": {
+                                "nombre": "Jornadas y modalidad",
+                                "label": "AA_CR_13_EPIT"
+                            }
+                        },
+                        "nombre": "Carreras"
+                    }
+                },
+                "nombre": "Admisión y Matrícula"
+            },
+            "Financiamiento Estudiantil": {
+                "tematicas": {
+                    "TNE (Pase Escolar)": {
+                        "submotivos": {
+                            "Plazos postulación": {
+                                "nombre": "Plazos postulación",
+                                "label": "FE_TNE_10_EPIT"
+                            }
+                        },
+                        "nombre": "TNE (Pase Escolar)"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "FE_OT_16_EPIT"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Tipos de beneficio": {
+                        "submotivos": {
+                            "BAES": {
+                                "nombre": "BAES",
+                                "label": "FE_TB_4_EPIT"
+                            },
+                            "Becas internas": {
+                                "nombre": "Becas internas",
+                                "label": "FE_TB_5_EPIT"
+                            },
+                            "Becas Arancel Mineduc": {
+                                "nombre": "Becas Arancel Mineduc",
+                                "label": "FE_TB_3_EPIT"
+                            },
+                            "CAE": {
+                                "nombre": "CAE",
+                                "label": "FE_TB_2_EPIT"
+                            },
+                            "Gratuidad": {
+                                "nombre": "Gratuidad",
+                                "label": "FE_TB_1_EPIT"
+                            }
+                        },
+                        "nombre": "Tipos de beneficio"
+                    },
+                    "Fecha de resultados": {
+                        "submotivos": {
+                            "Beneficio Internos": {
+                                "nombre": "Beneficio Internos",
+                                "label": "FE_FP_8_EPIT"
+                            },
+                            "Becas y Beneficios Mineduc": {
+                                "nombre": "Becas y Beneficios Mineduc",
+                                "label": "FE_FP_9_EPIT"
+                            }
+                        },
+                        "nombre": "Fecha de resultados"
+                    },
+                    "Fecha postulaciones": {
+                        "submotivos": {
+                            "Becas y Beneficios Mineduc": {
+                                "nombre": "Becas y Beneficios Mineduc",
+                                "label": "FE_FP_7_EPIT"
+                            },
+                            "Beneficio Internos": {
+                                "nombre": "Beneficio Internos",
+                                "label": "FE_FP_6_EPIT"
+                            }
+                        },
+                        "nombre": "Fecha postulaciones"
+                    }
+                },
+                "nombre": "Financiamiento Estudiantil"
+            }
+        }
+    },
+    {
+        "nombre": "ex_Alumno",
+        "ambitos": {
+            "Ex Alumno": {
+                "tematicas": {
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EA_OT_6_EET"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Validación de Títulos": {
+                        "submotivos": {
+                            "¿Cómo puedo validar un título?": {
+                                "nombre": "¿Cómo puedo validar un título?",
+                                "label": "EA_VT_1_EEX"
+                            },
+                            "Dudas": {
+                                "nombre": "Dudas",
+                                "label": "EA_VT_2_EEX"
+                            }
+                        },
+                        "nombre": "Validación de Títulos"
+                    },
+                    "Certificados Ex alumnos": {
+                        "submotivos": {
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "EA_CEA_4_EET"
+                            },
+                            "¿Qué certificados puedo solicitar y dónde?": {
+                                "nombre": "¿Qué certificados puedo solicitar y dónde?",
+                                "label": "EA_CEA_3_EET"
+                            }
+                        },
+                        "nombre": "Certificados Ex alumnos"
+                    }
+                },
+                "nombre": "Ex Alumno"
+            },
+            "Académicos / Curriculares": {
+                "tematicas": {
+                    "Certificados Ex alumnos": {
+                        "submotivos": {
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "AC_CEA_7_EEX"
+                            },
+                            "¿Qué certificados puedo solicitar y dónde?": {
+                                "nombre": "¿Qué certificados puedo solicitar y dónde?",
+                                "label": "AC_CEA_6_EEX"
+                            }
+                        },
+                        "nombre": "Certificados Ex alumnos"
+                    }
+                },
+                "nombre": "Académicos / Curriculares"
+            },
+            "Opinión (Buzón)": {
+                "tematicas": {
+                    "Reclamos": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "OP_RE_2_EEX"
+                            }
+                        },
+                        "nombre": "Reclamos"
+                    },
+                    "Felicitaciones": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "OP_FL_3_EEX"
+                            }
+                        },
+                        "nombre": "Felicitaciones"
+                    },
+                    "Sugerencias": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "OP_SG_1_EEX"
+                            }
+                        },
+                        "nombre": "Sugerencias"
+                    }
+                },
+                "nombre": "Opinión (Buzón)"
+            },
+            "Económicas": {
+                "tematicas": {
+                    "Deuda": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_DD_1_EEF"
+                            }
+                        },
+                        "nombre": "Deuda"
+                    },
+                    "Cobranza": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_CB_2_EEF"
+                            }
+                        },
+                        "nombre": "Cobranza"
+                    },
+                    "Devoluciones": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EC_DEV_3_EF"
+                            }
+                        },
+                        "nombre": "Devoluciones"
+                    }
+                },
+                "nombre": "Económicas"
+            },
+            "Titulación": {
+                "tematicas": {
+                    "Proceso Titulación": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "TT_PT_1_EEG"
+                            }
+                        },
+                        "nombre": "Proceso Titulación"
+                    },
+                    "Prácticas": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "TT_PR_2_EEG"
+                            }
+                        },
+                        "nombre": "Prácticas"
+                    }
+                },
+                "nombre": "Titulación"
+            },
+            "Vida Estudiantil": {
+                "tematicas": {
+                    "Descuentos y Beneficios": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "VE_DB_3_EEX"
+                            }
+                        },
+                        "nombre": "Descuentos y Beneficios"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "VE_OT_4_EEX"
+                            }
+                        },
+                        "nombre": "Otros"
+                    }
+                },
+                "nombre": "Vida Estudiantil"
+            },
+            "Empleabilidad": {
+                "tematicas": {
+                    "Otros": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EMP_OT_4_EET"
+                            }
+                        },
+                        "nombre": "Otros"
+                    },
+                    "Bolsa de Trabajo": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EMP_BT_1_EET"
+                            }
+                        },
+                        "nombre": "Bolsa de Trabajo"
+                    },
+                    "Feria Laboral": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EMP_FL_2_EET"
+                            }
+                        },
+                        "nombre": "Feria Laboral"
+                    },
+                    "Centro Desarrollo Laboral (CDL)": {
+                        "submotivos": {
+                            "": {
+                                "nombre": "",
+                                "label": "EMP_CDL_3_EET"
+                            }
+                        },
+                        "nombre": "Centro Desarrollo Laboral (CDL)"
+                    }
+                },
+                "nombre": "Empleabilidad"
+            },
+            "Cuenta Inacap": {
+                "tematicas": {
+                    "Clave": {
+                        "submotivos": {
+                            "Recuperar contraseña": {
+                                "nombre": "Recuperar contraseña",
+                                "label": "CI_CL_1_EEX"
+                            },
+                            "Cambio contraseña": {
+                                "nombre": "Cambio contraseña",
+                                "label": "CI_CL_2_EEX"
+                            }
+                        },
+                        "nombre": "Clave"
+                    },
+                    "Acceso": {
+                        "submotivos": {
+                            "Intranet": {
+                                "nombre": "Intranet",
+                                "label": "CI_AC_4_EEX"
+                            },
+                            "Correo": {
+                                "nombre": "Correo",
+                                "label": "CI_AC_3_EEX"
+                            }
+                        },
+                        "nombre": "Acceso"
+                    },
+                    "Otros": {
+                        "submotivos": {
+                            "Otros": {
+                                "nombre": "Otros",
+                                "label": "CI_OT_7_EEX"
+                            }
+                        },
+                        "nombre": "Otros"
+                    }
+                },
+                "nombre": "Cuenta Inacap"
+            }
+        }
+    }
+]
