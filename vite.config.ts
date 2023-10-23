@@ -21,7 +21,7 @@ export default defineConfig(async ({ command }) => {
 					"/api": {
 						target: "http://[::1]:54111/api",
 						secure: false,
-						changeOrigin: false,
+						changeOrigin: true,
 						rewrite: (path) => path.replace(/^\/api/, ""),
 					},
 				},

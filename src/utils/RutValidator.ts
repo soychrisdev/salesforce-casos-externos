@@ -1,4 +1,4 @@
-function cleanRut(rut: string): string {
+function cleanRut(rut: string | undefined): string {
 	/**
 	 * Delete all non-numeric characters from a RUT.
 	 * @param rut  RUT string
@@ -9,15 +9,17 @@ function cleanRut(rut: string): string {
 		: "";
 }
 
-function validateRut(rut: string): boolean {
+function validateRut(rut: string | undefined): boolean {
 	/**
 	 * Verify if a RUT is valid.
 	 * @param rut  RUT string
 	 * @return {boolean} true if RUT is valid, false otherwise.
 	 */
+		//@ts-ignore
 	if (/^0+/.test(rut)) {
 		return false;
 	}
+	//@ts-ignore
 	if (!/^0*(\d{1,3}(\.?\d{3})*)-?([\dkK])$/.test(rut)) {
 		return false;
 	}
@@ -48,7 +50,7 @@ function getLastDigitOfRut(rutNumbers: number): string {
 	return lastDigitValid;
 }
 
-function formatRut(rut: string, withDots = true): string {
+function formatRut(rut: string | undefined, withDots = true): string {
 	/**
 	 * Format a RUT to a valid format.
 	 * @param rut  RUT string
@@ -93,3 +95,4 @@ function generateRut(length = 8, formated = true): string {
 }
 
 export { cleanRut, formatRut, generateRut, getLastDigitOfRut, validateRut };
+

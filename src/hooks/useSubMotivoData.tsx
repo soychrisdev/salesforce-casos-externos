@@ -1,12 +1,10 @@
-import { useEffect } from "react";
+import { useMemo } from "react";
 import { useAppStore } from "../store/store";
 //@ts-ignore
 export const useSubMotivoData = (data, ambitoSelected, tematicaSelected) => {
-	const subMotivoSelected = useAppStore((state) => state.subMotivoSelected);
-	const subMotivoData = useAppStore((state) => state.subMotivoData);
-	const setSubmotivoData = useAppStore((state) => state.setSubMotivoData);
-	const tipoDataSelected = useAppStore((state) => state.tipoDataSelected);
-	useEffect(() => {
+	const { subMotivoSelected, subMotivoData, setSubMotivoData, tipoDataSelected } = useAppStore((state) => state);
+
+	useMemo(() => {
 		if (tematicaSelected) {
 			const filteredDataByTipo = data?.filter(
 				//@ts-ignore
@@ -18,7 +16,7 @@ export const useSubMotivoData = (data, ambitoSelected, tematicaSelected) => {
 					//@ts-ignore
 					(data) =>
 						//@ts-ignore
-						data?.ambitos[`${ambitoSelected}`].tematicas[`${tematicaSelected}`]
+						data?.ambitos[`${ambitoSelected}`]?.tematicas[`${tematicaSelected}`]
 							?.submotivos,
 				)
 				//@ts-ignore
@@ -28,7 +26,7 @@ export const useSubMotivoData = (data, ambitoSelected, tematicaSelected) => {
 					}
 				}, {});
 
-			setSubmotivoData(subMotivo);
+			setSubMotivoData(subMotivo);
 		}
 	}, [tematicaSelected]);
 

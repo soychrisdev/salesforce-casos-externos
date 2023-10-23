@@ -1,10 +1,20 @@
 import { useQuery } from "react-query";
+
+interface TIinitalAuthState {
+	access_token: string;
+	instance_url: string;
+	id: string;
+	token_type: string;
+	issued_at: string;
+	signature: string;
+}
 //@ts-ignore
-const fetchAuth = async () => {
+const fetchAuth = async ({ signal }) => {
 	const response = await fetch(
 		//@ts-ignore
 		`${config?.baseUrl}api/auth`,
 		{
+			signal,
 			// mode: "cors",
 			// credentials: "include",
 			method: "GET",
@@ -25,9 +35,12 @@ const fetchAuth = async () => {
 	const data = await response.json().then((res) => res);
 	return data;
 };
+
+
 //@ts-ignore
-export const useAuth = (rut) => {
-	return useQuery<Error>(["Authentication"], () => fetchAuth(), {
-		enabled: !!rut,
-	});
+export const useAuth = () => {
+	const controller = new AbortController();
+	const { signal } = controller;
+
+	return useQuery<TIinitalAuthState, Error>(["Authentication"], () => fetchAuth({ signal }));
 };

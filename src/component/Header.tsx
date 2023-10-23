@@ -4,7 +4,6 @@ interface HeaderComponentProps {
 	title: string | undefined;
 	accessibility: any; // Replace 'any' with the correct type
 	headerFn: any; // Replace 'any' with the correct type
-	rut: string;
 }
 
 interface Preferencia {
@@ -13,8 +12,8 @@ interface Preferencia {
 }
 
 const HeaderComponent: React.FC<HeaderComponentProps> = (props) => {
-	const [show, setShow] = useState(false);
 
+	const [show, setShow] = useState(false);
 	const [showDesktop, setShowDesktop] = useState(false);
 
 	useEffect(() => {
@@ -25,12 +24,16 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (props) => {
 		}
 	}, []);
 
+
+
+
+
 	const applyAccessibility = () => {
 		// Access the properties using props.config.preferencias
 		//@ts-ignore
 		if (!localStorage.getItem("theme")) {
 			const preferencias: Preferencia = {
-				oscuro: true,
+				oscuro: false, //cambio requerido para que funcione el modo claro automaticamente.
 				fontSize: "16px",
 			};
 			localStorage.setItem("theme", JSON.stringify(preferencias));
@@ -179,9 +182,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (props) => {
 				</div>
 
 				<div className="user-info">
-					<div className="user-name mr-4">
-						<p>{props?.rut}</p>
-					</div>
+
 
 					<div
 						className={"user-mobile-menu user-button dropdown dropdown-toggle"}
@@ -197,9 +198,8 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (props) => {
 						</i>
 
 						<div
-							className={`dropdown-menu dropdown-menu-right ${
-								show ? "show" : ""
-							}`}
+							className={`dropdown-menu dropdown-menu-right ${show ? "show" : ""
+								}`}
 							style={{
 								position: "absolute",
 								top: "0",
@@ -208,9 +208,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (props) => {
 								transform: "translate3d(-164px, 28px, 0px)",
 							}}
 						>
-							<p className="dropdown-user-name">
-								<p>{props?.rut}</p>
-							</p>
+
 							<p className="dropdown-title dropdown-title--border">
 								Accesibilidad
 							</p>
@@ -256,12 +254,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (props) => {
 								<li className="accesibility-menu__item">
 									<div className="d-flex align-items-center justify-content-between">
 										<span id="tipo-de-modo">Cerrar Sesi&oacute;n</span>
-										<div className="d-flex justify-content-center">
-											{/* rome-ignore lint/a11y/useValidAnchor: <explanation> */}
-											<a role="button">
-												<i className="material-icons">exit_to_app</i>
-											</a>
-										</div>
+
 									</div>
 								</li>
 							</ul>
@@ -281,9 +274,8 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (props) => {
 							</i>
 
 							<div
-								className={`dropdown-menu dropdown-menu-right ${
-									showDesktop ? "show" : ""
-								}`}
+								className={`dropdown-menu dropdown-menu-right ${showDesktop ? "show" : ""
+									}`}
 								style={{
 									position: "absolute",
 									top: "0",
@@ -331,12 +323,6 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (props) => {
 									</li>
 								</ul>
 							</div>
-						</div>
-
-						<div className="user-logout user-button">
-							<a href="https://portales.inacap.cl/">
-								<i className="material-icons">exit_to_app</i>
-							</a>
 						</div>
 					</div>
 				</div>

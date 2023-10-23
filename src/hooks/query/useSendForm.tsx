@@ -3,17 +3,22 @@ import { ResponseError } from "../../utils/ResponseError";
 
 //@ts-ignore
 const postFormData = async (value) => {
+	console.log(JSON.stringify(value))
 	const toSendObject = {
 		label: value.label[0],
 		rut: value.rut,
 		instance_url: value.url,
 		descripcion: value.description,
+		telefono: value.phoneNumber,
 		email: value.email,
+		tipoPostulante: value.tipoPostulante,
+		nombre: value.nombre,
+		apellido: value.apellido,
 	};
 
 	const response = await fetch(
 		//@ts-ignore
-		`${config?.baseUrl}api/crearCasoPublico`,
+		`${config?.baseUrl}/api/crearCasoPublico`,
 		{
 			method: "POST",
 			body: JSON.stringify(toSendObject),
@@ -36,11 +41,10 @@ const postFormData = async (value) => {
 };
 export const useFormData = () => {
 	const queryClient = useQueryClient();
-	const { mutate: postForm, error } = useMutation(postFormData, {
+	const { mutate: postForm, error, status, isLoading } = useMutation(postFormData, {
 		onSuccess: async () => {
 			await queryClient.invalidateQueries(["DataCasos"]);
 			//@ts-ignore
-
 			toastr.success("Formulario enviado");
 		},
 		onError: (error) => {
@@ -56,6 +60,8 @@ export const useFormData = () => {
 	return {
 		postForm,
 		error,
+		status,
+		isLoading
 	};
 };
 //cuestionario de alinamiento de la norma chilena 2770
