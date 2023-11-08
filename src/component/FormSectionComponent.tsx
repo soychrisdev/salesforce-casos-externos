@@ -19,7 +19,7 @@ import SelectSede from "./SelectSede";
 const FormSectionComponent = (props) => {
 
 	const navigate = useNavigate();
-	const { caseDescription, setCaseDescription: setCaseDescrip } = useAppStore((state) => state)
+	const { caseDescription, setCaseDescription: setCaseDescrip, dataSede } = useAppStore((state) => state)
 	//@ts-ignore
 	const { data: dataTipoCasos, isLoading } = useDataCasos(
 		//@ts-ignore
@@ -91,6 +91,7 @@ const FormSectionComponent = (props) => {
 			tipoPostulante: tipoDataSelected,
 			nombre: props?.nombre,
 			apellido: props?.apellido,
+			sede: dataSede
 		};
 
 		postForm(sendValues);
