@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 const fetchDataCasos = async (token, url) => {
 	const response = await fetch(
 		//@ts-ignore
-		`${config?.baseUrl}api/data`,
+		`${config?.baseUrl}/api/data`,
 		{
 			method: "POST",
 
@@ -34,7 +34,7 @@ export const useDataCasos = (token: string | null, url: string) => {
 		{
 			enabled: !!token,
 			//@ts-ignore
-			select: (data) => data.filter((item) => item.nombre !== "estudiante"),
+			select: (data) => data.filter((item) => item.nombre !== "Estudiante"),
 		},
 	);
 };

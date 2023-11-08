@@ -18,7 +18,7 @@ export const useTematicaData = (data, ambitoSelected, tipoDataStored) => {
 					//@ts-ignore
 					?.reduce((result, obj) => {
 						return obj ? [...result, ...Object.keys(obj)] : result;
-					}, []);
+					}, []).sort();
 				setTematicaData(tematicaMotivo);
 				setSubMotivoData([]);
 			}

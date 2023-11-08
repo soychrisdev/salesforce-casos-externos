@@ -7,7 +7,7 @@ export const useTipoData = (data) => {
 		if (data) {
 			const tipoData = data
 				//@ts-ignore
-				?.map((data) => data.nombre);
+				?.map((data) => data.nombre).sort();
 			setTipoData(tipoData);
 		}
 	}, [data]);

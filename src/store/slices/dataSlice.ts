@@ -5,6 +5,8 @@ export interface DataSlice {
 	tematicaData: [] | null;
 	subMotivoData: [] | null;
 	ambitoData: [] | null;
+	dataSede: [] | null;
+	setDataSede: (value: []) => void;
 	setTipoData: (value: []) => void;
 	setData: (value: []) => void;
 	setTematicaData: (value: []) => void;
@@ -17,6 +19,8 @@ export const createDataSlice: StateCreator<DataSlice> = (set) => ({
 	tematicaData: null,
 	subMotivoData: null,
 	ambitoData: null,
+	dataSede: null,
+	setDataSede: (value) => set({ dataSede: value }),
 	setTipoData: (value) => set({ tipoData: value }),
 	setData: (value) => set({ data: value }),
 	setTematicaData: (value) => set({ tematicaData: value }),

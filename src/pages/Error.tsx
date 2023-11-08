@@ -1,38 +1,17 @@
-import { Link, isRouteErrorResponse, useRouteError } from "react-router-dom";
-import { MESSAGES } from "../utils/types";
+import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
-export default function Error() {
+export default function ErrorBoundary() {
     const error = useRouteError();
-
     if (isRouteErrorResponse(error)) {
-        if (error.status === 404) {
-            return <div>La pagina no existe! <Link role="button" to={'/CRM_SF/SF_CASOS_EXTERNO'} reloadDocument>
-                Volver
-            </Link></div>;
-        }
-
-        if (error.status === 401) {
-            return <div>Sin autorización <Link role="button" to={'/CRM_SF/SF_CASOS_EXTERNO'} reloadDocument>
-                Volver
-            </Link></div>;
-        }
-
-        if (error.status === 503) {
-            return <div>Problema con la API <Link role="button" to={'/CRM_SF/SF_CASOS_EXTERNO'} reloadDocument>
-                Volver
-            </Link></div>;
-        }
-
-        if (error.status === 418) {
-            <Link role="button" to={'/CRM_SF/SF_CASOS_EXTERNO'} reloadDocument>
-                Volver
-            </Link>
-        }
+        return (
+            <div>
+                <h1>Oops!</h1>
+                <h2>{error.status}</h2>
+                <p>{error.statusText}</p>
+                {error.data?.message && <p>{error.data.message}</p>}
+            </div>
+        );
+    } else {
+        return <div>Oops</div>;
     }
-
-    return <div>{MESSAGES.ERROR_CARGAR_PAGINA}
-        <Link role="button" to={'/CRM_SF/SF_CASOS_EXTERNO'} reloadDocument>
-            Volver
-        </Link>
-    </div>;
 }

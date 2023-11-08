@@ -45,12 +45,12 @@ export const useFormData = () => {
 		onSuccess: async () => {
 			await queryClient.invalidateQueries(["DataCasos"]);
 			//@ts-ignore
-			toastr.success("Formulario enviado");
+			toastr.success("Caso creado con éxito.");
 		},
-		onError: (error) => {
+		onError: () => {
 			// If there was an error, revert the optimistic update
 			//@ts-ignore
-			toastr.error(error);
+			toastr.error("Se ha producido un error en crear el caso, favor intente nuevamente.");
 		},
 		onSettled: () => {
 			queryClient.invalidateQueries(["DataCasos"]);

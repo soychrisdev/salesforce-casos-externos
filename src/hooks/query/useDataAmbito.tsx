@@ -20,7 +20,7 @@ interface TDataAmbito {
 const fetchDataAmbito = async (token: string | undefined, url: string): Promise<TDataAmbito[]> => {
 	const response = await fetch(
 		//@ts-ignore
-		`${config.baseUrl}api/data`,
+		`${config.baseUrl}/api/data`,
 		{
 			method: "POST",
 			body: JSON.stringify({ instance_url: url }),

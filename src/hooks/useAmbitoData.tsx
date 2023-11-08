@@ -20,7 +20,7 @@ export const useAmbitoData = (data) => {
 					//@ts-ignore
 					?.reduce((result, obj) => {
 						return Object.keys(obj);
-					}, {});
+					}, {}).sort();
 				setAmbitoData(filtered);
 			}
 		}

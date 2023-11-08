@@ -17,11 +17,11 @@ export default function Select({
 	data,
 	disabled,
 }: SelectProps) {
-	const { setAmbito, setTematica, setSubMotivo, setTipoDataSelected } = useAppStore((state) => state);
-	const startSelects = $(".chosen-select");
+	const { setAmbito, setTematica, setSubMotivo, setTipoDataSelected, setDataSede } = useAppStore((state) => state);
 	useEffect(() => {
 		if (data) {
 			const chosenSelect = $(`#${id}`);
+			const sede = document.getElementById("select-sede") as HTMLSelectElement;
 			const tipo = document.getElementById("select-tipo") as HTMLSelectElement;
 			const ambito = document.getElementById(
 				"select-ambito",
@@ -38,9 +38,19 @@ export default function Select({
 			setAmbito(ambito?.value);
 			setTematica(tematicaMotivo?.value);
 			setSubMotivo(subMotivo?.value);
+			setDataSede(sede?.value);
 			chosenSelect.trigger("chosen:updated");
 
-			chosenSelect.chosen().change((e) => {
+			chosenSelect.chosen({
+				disable_search_threshold: 10,
+				no_results_text: "Sin Resultados para: ",
+				width: "100%",
+				placeholder_text_single: "Sin resultados...",
+			}).change((e) => {
+				if (id === "select-sede") {
+					//@ts-ignore
+					setDataSede(e.target.value);
+				}
 				if (id === "select-ambito") {
 					//@ts-ignore
 					setAmbito(e.target.value);
@@ -60,14 +70,14 @@ export default function Select({
 					setTipoDataSelected(e.target.value);
 				}
 			});
-			if (chosenSelect.length) {
-				startSelects.chosen({
-					disable_search_threshold: 10,
-					no_results_text: "Sin Resultados para: ",
-					width: "100%",
-					placeholder_text_single: "Seleccione...",
-				});
-			}
+			// if (chosenSelect.length) {
+			// 	startSelects.chosen({
+			// 		disable_search_threshold: 10,
+			// 		no_results_text: "Sin Resultados para: ",
+			// 		width: "100%",
+			// 		placeholder_text_single: "Seleccione...",
+			// 	});
+			// }
 		}
 	}, [data, setTipoDataSelected]);
 

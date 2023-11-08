@@ -12,7 +12,7 @@ const postFormData = async (value) => {
 
     const response = await fetch(
         //@ts-ignore
-        `${config?.baseUrl}api/dataCasosByRutPublic`,
+        `${config?.baseUrl}/api/dataCasosByRutPublic`,
         {
             method: "POST",
             body: JSON.stringify(toSendObject),
@@ -33,7 +33,9 @@ const postFormData = async (value) => {
     }
 
     const data = (await response.json().then((res) => res)) as [];
-    return data;
+    const transformedData = []
+    transformedData.push(data)
+    return transformedData;
 };
 export const useFormConsulta = () => {
     const { mutate: postForm, error, isLoading, data, isSuccess, isIdle } = useMutation(postFormData, {
@@ -41,10 +43,10 @@ export const useFormConsulta = () => {
             //@ts-ignore
             toastr.success("Consulta realizada con éxito");
         },
-        onError: (error) => {
+        onError: () => {
             // If there was an error, revert the optimistic update
             //@ts-ignore
-            toastr.error(JSON.stringify(error.response.Message));
+            toastr.error("Se ha producido un error al generar la consulta, favor intente nuevamente.");
         },
         onSettled: () => {
         },

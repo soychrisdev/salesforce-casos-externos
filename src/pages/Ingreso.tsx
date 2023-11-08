@@ -94,10 +94,11 @@ export default function Ingreso() {
 
     }, [status])
 
+    if (isLoading) return <LoadingOverlayComponent />
+
     return (
         <div>
 
-            {isLoading && <LoadingOverlayComponent />}
             <div className="card" id="rut">
                 <div className="card-header">
                     <h4 className="float-left heading h4-responsive mb-0">

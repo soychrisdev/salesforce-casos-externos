@@ -22,7 +22,7 @@ export const useSubMotivoData = (data, ambitoSelected, tematicaSelected) => {
 				//@ts-ignore
 				.reduce((result, obj) => {
 					if (obj) {
-						return Object?.keys(obj);
+						return Object?.keys(obj).sort();
 					}
 				}, {});
 

@@ -5,10 +5,10 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import {
 	RouterProvider
 } from "react-router-dom";
+import './App.css';
 import "./index.css";
 import { queryClient } from "./utils/queryClient.ts";
 import { router } from "./utils/router.tsx";
-
 
 
 

@@ -1,17 +1,24 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDataCasos } from "../hooks/query/useDataCasos";
+import { usefetchSedes } from "../hooks/query/useSede";
 import { useFormData } from "../hooks/query/useSendForm";
 import { useAmbitoData } from "../hooks/useAmbitoData";
 import { useSubMotivoData } from "../hooks/useSubMotivoData";
 import { useTematicaData } from "../hooks/useTematicaData";
 import { useTipoData } from "../hooks/useTipoData";
 import { useAppStore } from "../store/store";
+import LoadingOverlayComponent from "./LoadingOverlay";
 import Select from "./Select";
+import SelectSede from "./SelectSede";
 
 
 
 
 //@ts-ignore
 const FormSectionComponent = (props) => {
+
+	const navigate = useNavigate();
 	const { caseDescription, setCaseDescription: setCaseDescrip } = useAppStore((state) => state)
 	//@ts-ignore
 	const { data: dataTipoCasos, isLoading } = useDataCasos(
@@ -20,6 +27,7 @@ const FormSectionComponent = (props) => {
 		//@ts-ignore
 		props?.auth?.instance_url,
 	);
+	const { data: dataSedes, isLoading: isLoadingDataSedes } = usefetchSedes();
 
 	const { tipoDataStored } = useTipoData(dataTipoCasos);
 
@@ -42,7 +50,7 @@ const FormSectionComponent = (props) => {
 		tematicaSelected,
 	);
 
-	const { postForm } = useFormData();
+	const { postForm, status } = useFormData();
 	const handleSubmit = (e: Event) => {
 		e.preventDefault();
 
@@ -79,14 +87,24 @@ const FormSectionComponent = (props) => {
 			email: props?.email,
 			url: props?.auth?.instance_url,
 			rut: props?.rut,
-			tipoPostulante: tipoDataSelected
+			phoneNumber: props?.phoneNumber,
+			tipoPostulante: tipoDataSelected,
+			nombre: props?.nombre,
+			apellido: props?.apellido,
 		};
 
 		postForm(sendValues);
-
-
-
 	};
+
+	useEffect(() => {
+		if (status === "success") {
+			setTimeout(() => {
+				//reload webpage
+				navigate(0);
+			}, 1000);
+		}
+	}, [status])
+
 
 	const limit = 250; // Set your character limit here
 	const charCount = caseDescription?.length;
@@ -99,118 +117,138 @@ const FormSectionComponent = (props) => {
 
 
 	return (
-		<form id="1" className="needs-validation mt-3" noValidate>
-			<div className="row">
-				<div className="col-12 col-md-4 mb-3">
-					<div className="md-form">
-						{tipoDataStored && <Select
-							id="select-tipo"
-							label="Tipo (*)"
-							data={tipoDataStored}
-							isLoading={isLoading}
-							required={true}
-							disabled={false} />}
+		<div className="card">
+			<form id="1" className="needs-validation mt-3" noValidate>
+				{status === "loading" && <LoadingOverlayComponent />}
+				<div className="row">
 
+					<div className="col-12 col-md-4 mb-3">
+						<div className="md-form">
+							{tipoDataStored && <Select
+								id="select-tipo"
+								label="Tipo (*)"
+								data={tipoDataStored}
+								isLoading={isLoading}
+								required={true}
+								disabled={false} />}
+
+						</div>
 					</div>
-				</div>
-				<div className="col-12 col-md-4 mb-3">
-					<div className="md-form">
-						{ambitoData && <Select
-							id="select-ambito"
-							label="&Aacute;mbito (*)"
-							data={ambitoData}
-							isLoading={isLoading}
-							required={true}
-							disabled={false} />}
+					<div className="col-12 col-md-4 mb-3">
+						<div className="md-form">
+							{ambitoData && <Select
+								id="select-ambito"
+								label="&Aacute;mbito (*)"
+								data={ambitoData}
+								isLoading={isLoading}
+								required={true}
+								disabled={false} />}
 
+						</div>
 					</div>
-				</div>
-				<div className="col-12 col-md-4 mb-3">
-					<div className="md-form">
-						{tematicaData && <Select
-							id="select-tematica"
-							label="Tem&aacute;tica motivo (*)"
-							data={tematicaData}
-							isLoading={isLoading}
-							required={true}
-							disabled={
-								//@ts-ignore
-								tematicaData?.length <= 1 || tematicaData === null
-									? true
-									: false} />}
+					<div className="col-12 col-md-4 mb-3">
+						<div className="md-form">
+							{tematicaData && <Select
+								id="select-tematica"
+								label="Tem&aacute;tica motivo (*)"
+								data={tematicaData}
+								isLoading={isLoading}
+								required={true}
+								disabled={
+									//@ts-ignore
+									tematicaData === null
+										? true
+										: false}
+							/>}
 
+						</div>
 					</div>
-				</div>
 
-				<div className="col-12 col-md-4 mb-3">
-					<div className="md-form">
-						{subMotivoData && <Select
-							id="select-submotivo"
-							label="Submotivo"
-							data={subMotivoData}
-							isLoading={isLoading}
-							required={true}
-							disabled={false} />
-						}
+					<div className="col-12 col-md-4 mb-3">
+						<div className="md-form">
+							{subMotivoData && <Select
+								id="select-submotivo"
+								label="Submotivo"
+								data={subMotivoData}
+								isLoading={isLoading}
+								required={true}
+								disabled={subMotivoData?.length <= 1 && true} />
+							}
 
+						</div>
 					</div>
-				</div>
 
-				<div className="col-md-6 mb-4 mt-3 mb-2">
-					<div className="md-form" id="textarea2">
-						<textarea
-							id="campo_mensaje2"
-							name="campo_mensaje"
-							rows={4}
-							className={`form-control md-textarea ${charCount ? (charCount > limit ? "count-error" : "") : ""}`}
-							placeholder="Ingrese descripción"
-							maxLength={limit}
-							value={caseDescription ? caseDescription : ""}
-							onChange={(e) => setCaseDescrip(e.target.value)}
-							required />
-						<label
-							className="count active"
-							style={{
-								transform: "none",
-								right: 0,
-								left: "auto",
-								top: -20,
-								color: "#999",
-							}}
-						>
-							{charCount}/{limit}
-						</label>
-						<label htmlFor="campo_mensaje2" className="active">
-							Descripción del caso (*)
-						</label>
-						{charCount ? (
-							charCount > limit && (
+					<div className="col-12 col-md-4 mb-3">
+						<div className="md-form">
+							{isLoadingDataSedes ? 'loading' : <SelectSede
+								id="select-sede"
+								label="Sede (*)"
+								data={dataSedes}
+								isLoading={isLoadingDataSedes}
+								required={true}
+								disabled={false} />}
+
+						</div>
+					</div>
+
+					<div className="col-md-12 mb-4 mt-3 mb-2">
+						<div className="md-form" id="textarea2">
+							<textarea
+								id="campo_mensaje2"
+								name="campo_mensaje"
+								rows={4}
+								className={`form-control md-textarea ${charCount ? (charCount > limit ? "count-error" : "") : ""} w-full`}
+								placeholder="Ingrese descripción"
+								maxLength={limit}
+								value={caseDescription ? caseDescription : ""}
+								onChange={(e) => setCaseDescrip(e.target.value)}
+								required />
+							<label
+								className="count active"
+								style={{
+									transform: "none",
+									right: 0,
+									left: "auto",
+									top: -20,
+									color: "#999",
+								}}
+							>
+								{charCount}/{limit}
+							</label>
+							<label htmlFor="campo_mensaje2" className="active">
+								Descripción del caso (*)
+							</label>
+							{charCount ? (
+								charCount > limit && (
+									<div className="invalid-feedback">
+										El campo excede el límite de caracteres
+									</div>
+								)
+							) : (
 								<div className="invalid-feedback">
 									El campo excede el límite de caracteres
 								</div>
-							)
-						) : (
-							<div className="invalid-feedback">
-								El campo excede el límite de caracteres
-							</div>
-						)}
+							)}
+						</div>
+					</div>
+				</div><div className="row mt-2">
+					<div className="col-12 mb-4 d-flex align-items-center justify-content-end">
+						<button
+							id="btnFormulario"
+							type="button"
+							className="btn btn-default ml-0"
+							// rome-ignore lint/suspicious/noExplicitAny: <explanation>
+							onClick={(e: any) => handleSubmit(e)}
+							disabled={status === "loading"}
+						>
+
+							{status === "loading" ? 'Registrando...' : 'Registrar'}
+						</button>
 					</div>
 				</div>
-			</div><div className="row mt-2">
-				<div className="col-12 mb-4 d-flex align-items-center justify-content-end">
-					<button
-						id="btnFormulario"
-						type="button"
-						className="btn btn-default ml-0"
-						// rome-ignore lint/suspicious/noExplicitAny: <explanation>
-						onClick={(e: any) => handleSubmit(e)}
-					>
-						Registrar
-					</button>
-				</div>
-			</div>
 
-		</form>
+			</form>
+		</div>
 	);
 };
 

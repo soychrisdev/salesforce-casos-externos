@@ -35,6 +35,9 @@ export default function ConsultaPage() {
       token: token?.access_token
     };
 
+
+
+
     //@ts-ignore
     if (!validateRut(sendValues.rut)) return toastr.error("Rut es invalido!");
     //@ts-ignore

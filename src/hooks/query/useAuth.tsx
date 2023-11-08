@@ -12,7 +12,7 @@ interface TIinitalAuthState {
 const fetchAuth = async ({ signal }) => {
 	const response = await fetch(
 		//@ts-ignore
-		`${config?.baseUrl}api/auth`,
+		`${config?.baseUrl}/api/auth`,
 		{
 			signal,
 			// mode: "cors",
