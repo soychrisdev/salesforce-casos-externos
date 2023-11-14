@@ -81,9 +81,9 @@ export default function Ingreso() {
         if (dataValidador?.status === 400) {
             if (userInfo?.userIsValid === false) {
                 setUserInfo({ ...userInfo, userIsValid: true })
-                setTimeout(() => {
-                    navigate("/CRM_SF/SF_CASOS_EXTERNO/ingreso");
-                }, 1000)
+
+                navigate("/CRM_SF/SF_CASOS_EXTERNO/ingreso");
+
             }
         }
 

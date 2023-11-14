@@ -9,11 +9,12 @@ const postFormData = async (value) => {
 		rut: value.rut,
 		instance_url: value.url,
 		descripcion: value.description,
-		telefono: value.phoneNumber,
+		telefono: `56${value.phoneNumber}`,
 		email: value.email,
 		tipoPostulante: value.tipoPostulante,
 		nombre: value.nombre,
 		apellido: value.apellido,
+		sede: value.sede
 	};
 
 	const response = await fetch(

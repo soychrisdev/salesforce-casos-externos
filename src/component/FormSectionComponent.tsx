@@ -184,6 +184,7 @@ const FormSectionComponent = (props) => {
 							{isLoadingDataSedes ? 'loading' : <SelectSede
 								id="select-sede"
 								label="Sede (*)"
+								//@ts-ignore
 								data={dataSedes}
 								isLoading={isLoadingDataSedes}
 								required={true}

@@ -21,6 +21,7 @@ export const usefetchSedes = () => {
         ["dataSedes"],
         () => fetchSedes(),
         {
+            //@ts-ignore
             select: (data) => data.sort((a, b) => a.NAME > b.NAME ? 1 : -1),
         }
     );

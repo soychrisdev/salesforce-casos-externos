@@ -1,9 +1,6 @@
 import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useDebounce } from 'usehooks-ts';
-
-
-
 
 interface TanStackTableProps {
     data: [][] | undefined;
@@ -11,7 +8,7 @@ interface TanStackTableProps {
     isSuccess: boolean;
 }
 export default function TanStackTable({ data, isSuccess }: TanStackTableProps) {
-    const tableRef = useRef();
+    // const tableRef = useRef();
 
     const columnHelper = createColumnHelper();
     const columnDefWithCheckBox = React.useMemo(() => [
@@ -68,41 +65,40 @@ export default function TanStackTable({ data, isSuccess }: TanStackTableProps) {
     });
 
 
+    // useEffect(() => {
+    //     //@ts-ignore
+    //     let dataTableInstanceRef: DataTables.Api | null = null;
 
-    useEffect(() => {
-        //@ts-ignore
-        let dataTableInstanceRef: DataTables.Api | null = null;
+    //     if (data) {
 
-        if (data) {
+    //         const initializeDataTable = () => {
+    //             if (tableRef.current) {
+    //                 //@ts-ignore
+    //                 dataTableInstanceRef = $(tableRef.current).DataTable({
+    //                     dom: '<"top top-grey"<"dataTables_actions"f>> <t> <"bottom mt-2 d-flex align-items-center justify-content-between flex-wrap"<"d-flex" il>p>',
+    //                     scrollY: "60vh",
+    //                     scrollX: true,
+    //                     lengthMenu: [
+    //                         [20, 30, 40, -1],
+    //                         [20, 30, 40, "Todas"],
+    //                     ],
+    //                     aaSorting: [],
+    //                     destroy: true,
+    //                 });
+    //             }
 
-            const initializeDataTable = () => {
-                if (tableRef.current) {
-                    //@ts-ignore
-                    dataTableInstanceRef = $(tableRef.current).DataTable({
-                        dom: '<"top top-grey"<"dataTables_actions"f>> <t> <"bottom mt-2 d-flex align-items-center justify-content-between flex-wrap"<"d-flex" il>p>',
-                        scrollY: "60vh",
-                        scrollX: true,
-                        lengthMenu: [
-                            [20, 30, 40, -1],
-                            [20, 30, 40, "Todas"],
-                        ],
-                        aaSorting: [],
-                        destroy: true,
-                    });
-                }
+    //         };
+    //         initializeDataTable();
+    //     }
 
-            };
-            initializeDataTable();
-        }
+    //     return () => {
+    //         // Clean up by destroying the DataTable instance
+    //         if (dataTableInstanceRef) {
+    //             dataTableInstanceRef.destroy();
+    //         }
+    //     };
 
-        return () => {
-            // Clean up by destroying the DataTable instance
-            if (dataTableInstanceRef) {
-                dataTableInstanceRef.destroy();
-            }
-        };
-
-    }, [debouncedValue]);
+    // }, [debouncedValue]);
 
 
     if (!isSuccess || !data) return <span>{'Error en la consulta, por favor intente otros valores.'}</span>
@@ -112,7 +108,8 @@ export default function TanStackTable({ data, isSuccess }: TanStackTableProps) {
             {/* //@ts-ignore */}
             <table
                 //@ts-ignore
-                ref={isSuccess ? tableRef : null} className="datatables table table-hover table-striped table-bordered m-0">
+                // ref={isSuccess ? tableRef : null} 
+                className="table-responsive-sm table table-striped">
                 <thead>
                     {tableInstance.getHeaderGroups().map((headerEl) => {
                         return (

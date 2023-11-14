@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Layout from "../component/Layout";
 import Resultados from '../pages/ConsultaPage';
 import ErrorBoundary from '../pages/Error';
@@ -26,8 +26,12 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: "*",
-				element: <ErrorBoundary />,
-			}
+				element: <Navigate to="/CRM_SF/SF_CASOS_EXTERNO" />,
+			},
 		],
+	},
+	{
+		path: "*",
+		element: <Navigate to="/CRM_SF/SF_CASOS_EXTERNO" />,
 	},
 ]);	

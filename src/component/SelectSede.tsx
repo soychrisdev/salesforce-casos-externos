@@ -22,7 +22,7 @@ export default function SelectSede({
 		if (data) {
 			const chosenSelect = $(`#${id}`);
 			const sede = document.getElementById("select-sede") as HTMLSelectElement;
-
+			//@ts-ignore
 			setDataSede(sede?.value);
 			chosenSelect.trigger("chosen:updated");
 
@@ -52,8 +52,10 @@ export default function SelectSede({
 				required={required}
 				disabled={disabled}
 			>
-				{data?.map(({ ID, NAME, SIGACODE, STATUS, ACTIVO_PILOTO }) => (
-					<option key={ID} value={NAME}>
+
+				{/*  ID, NAME, SIGACODE, STATUS, ACTIVO_PILOTO */}
+				{data?.map(({ ID, NAME }) => (
+					<option key={ID} value={ID}>
 						{NAME}
 					</option>
 				))}

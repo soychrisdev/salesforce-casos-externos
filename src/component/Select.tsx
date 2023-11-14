@@ -38,6 +38,7 @@ export default function Select({
 			setAmbito(ambito?.value);
 			setTematica(tematicaMotivo?.value);
 			setSubMotivo(subMotivo?.value);
+			//@ts-ignore
 			setDataSede(sede?.value);
 			chosenSelect.trigger("chosen:updated");
 
