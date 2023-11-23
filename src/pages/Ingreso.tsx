@@ -10,7 +10,7 @@ export default function Ingreso() {
 
     const { userInfo, setUserInfo } = useAppStore((state) => state);
     const { data: url } = useAuth();
-    const { postForm: postValidador, status, isLoading } = useValidador();
+    const { postForm: postValidador, isLoading } = useValidador();
     const navigate = useNavigate();
     //@ts-ignore
     const handleValidateRut = (rut) => {
@@ -19,7 +19,7 @@ export default function Ingreso() {
     };
 
     const handleSubmit = async () => {
-
+        //@ts-ignore
         if (validate(userInfo) === true) {
 
             setUserInfo({ ...userInfo })

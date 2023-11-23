@@ -44,7 +44,7 @@ export const useFormData = () => {
 			//@ts-ignore
 			toastr.success("Caso creado con éxito.");
 		},
-		onError: (error) => {
+		onError: () => {
 			//@ts-ignore
 			toastr.error("No se puede ingresar el caso, revise si no esta repetido o ya tiene uno abierto");
 		},
