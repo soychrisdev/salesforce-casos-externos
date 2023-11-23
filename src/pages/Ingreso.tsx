@@ -1,72 +1,51 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import isEmail from "validator/lib/isEmail";
 import LoadingOverlayComponent from "../component/LoadingOverlay";
 import { useAuth } from "../hooks/query/useAuth";
 import { useValidador } from "../hooks/query/useValidador";
 import { useAppStore } from "../store/store";
 import { formatRut, validateRut } from "../utils/RutValidator";
+import { validate } from "./validate";
 
 export default function Ingreso() {
 
     const { userInfo, setUserInfo } = useAppStore((state) => state);
     const { data: url } = useAuth();
-    const { postForm: postValidador, data: dataValidador, status, isLoading } = useValidador();
+    const { postForm: postValidador, status, isLoading } = useValidador();
     const navigate = useNavigate();
     //@ts-ignore
     const handleValidateRut = (rut) => {
         const isValid = validateRut(rut);
         return isValid;
     };
-    const validate = () => {
-        let status = false;
 
-        //validar nombre y apellido
-        if (userInfo?.name === "") {
-            //@ts-ignore
-            return "Nombre y apellido invalido!"
-        }
-        //validar rut
-        if (userInfo?.rut === "") {
-            //@ts-ignore
-            return "Rut invalido!"
-        }
-        //validate email using regex expressions
+    const handleSubmit = async () => {
 
-        if (userInfo?.email === "" || userInfo?.email === undefined) {
-            return "Email invalido!"
-        }
-
-        if (!isEmail(userInfo?.email, { require_tld: true, blacklisted_chars: " " })) {
-            return "Email invalido!"
-        }
-
-        if (!validateRut(userInfo?.rut)) {
-            return "Rut invalido!"
-        }
-
-        if (userInfo?.phoneNumber === "" || userInfo?.phoneNumber === undefined || userInfo?.phoneNumber.length !== 9) {
-            return "Numero de telefono invalido!"
-        }
-        status = true;
-        return status
-    }
-
-    const handleSubmit = () => {
-
-        if (validate() === true) {
+        if (validate(userInfo) === true) {
 
             setUserInfo({ ...userInfo })
+            const response = await postValidador({
 
-            postValidador({
                 validador: "contacto",
                 rut: userInfo?.rut,
                 instance_url: url?.instance_url,
                 token: url?.access_token
             })
+
+            if (response?.status === 400) {
+                if (userInfo?.userIsValid === false) {
+                    setUserInfo({ ...userInfo, userIsValid: true })
+
+                    navigate("/CRM_SF/SF_CASOS_EXTERNO/ingreso");
+
+                }
+            }
+            if (response?.status === 200) {
+                //@ts-ignore
+                toastr.error('El rut ingresado corresponde a un Alumno, favor ingrese por su plataforma.');
+            }
         } else {
             //@ts-ignore
-            toastr.error(validate());
+            toastr.error(validate(userInfo));
         }
     };
 
@@ -77,28 +56,9 @@ export default function Ingreso() {
         });
     };
 
-    useEffect(() => {
-        if (dataValidador?.status === 400) {
-            if (userInfo?.userIsValid === false) {
-                setUserInfo({ ...userInfo, userIsValid: true })
-
-                navigate("/CRM_SF/SF_CASOS_EXTERNO/ingreso");
-
-            }
-        }
-
-        if (dataValidador?.status === 200) {
-            //@ts-ignore
-            toastr.error('El rut ingresado corresponde a un Alumno, favor ingrese por su plataforma.');
-        }
-
-    }, [status])
-
-    if (isLoading) return <LoadingOverlayComponent />
-
     return (
         <div>
-
+            {isLoading && <LoadingOverlayComponent />}
             <div className="card" id="rut">
                 <div className="card-header">
                     <h4 className="float-left heading h4-responsive mb-0">
@@ -166,7 +126,7 @@ export default function Ingreso() {
                     <div className="col-md-4 mb-2">
                         <div className="md-form my-3">
                             <input
-                                type="text"
+                                type="number"
                                 name="phoneNumber"
                                 id="phoneNumber"
                                 className="form-control mb-0"

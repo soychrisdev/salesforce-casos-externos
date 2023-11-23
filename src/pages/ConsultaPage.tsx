@@ -65,7 +65,7 @@ export default function ConsultaPage() {
           <div className="col-md-4 mb-2 mt-3">
             <div className="md-form my-3">
               <input
-                type="text"
+                type="number"
                 name="numCaso"
                 id="numCaso"
                 className="form-control mb-0"

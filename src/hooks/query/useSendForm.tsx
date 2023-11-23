@@ -1,5 +1,4 @@
 import { useMutation, useQueryClient } from "react-query";
-import { ResponseError } from "../../utils/ResponseError";
 
 //@ts-ignore
 const postFormData = async (value) => {
@@ -14,7 +13,7 @@ const postFormData = async (value) => {
 		tipoPostulante: value.tipoPostulante,
 		nombre: value.nombre,
 		apellido: value.apellido,
-		sede: value.sede
+		// sede: value.sede
 	};
 
 	const response = await fetch(
@@ -30,28 +29,28 @@ const postFormData = async (value) => {
 		},
 	);
 
-	const mensaje = await response.json().then((res) => res.Message);
+	const mensaje = await response.json()
+	console.log("mensaje: ", mensaje.Message);
 	if (!response.ok) {
-		// console.log(await response.status);
-		throw new ResponseError(mensaje, mensaje);
+		const newError = mensaje.Message.replace(/^Error:\s*/, '');
+		throw new Error(newError)
 
-		// Adjunta información extra al objeto de error.
 	}
 
 	return response;
 };
 export const useFormData = () => {
 	const queryClient = useQueryClient();
-	const { mutate: postForm, error, status, isLoading } = useMutation(postFormData, {
+	const { mutateAsync: postForm, error, status, isLoading } = useMutation(postFormData, {
 		onSuccess: async () => {
 			await queryClient.invalidateQueries(["DataCasos"]);
 			//@ts-ignore
 			toastr.success("Caso creado con éxito.");
 		},
-		onError: () => {
-			// If there was an error, revert the optimistic update
+		onError: (error) => {
+			console.log("error: ", error);
 			//@ts-ignore
-			toastr.error("Se ha producido un error en crear el caso, favor intente nuevamente.");
+			toastr.error(error);
 		},
 		onSettled: () => {
 			queryClient.invalidateQueries(["DataCasos"]);

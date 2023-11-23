@@ -1,4 +1,3 @@
-// ResultsSectionComponent.tsx
 import React from 'react';
 
 const ResultsSectionComponent: React.FC = () => {

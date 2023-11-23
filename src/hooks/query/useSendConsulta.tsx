@@ -44,9 +44,8 @@ export const useFormConsulta = () => {
             toastr.success("Consulta realizada con éxito");
         },
         onError: () => {
-            // If there was an error, revert the optimistic update
             //@ts-ignore
-            toastr.error("Se ha producido un error al generar la consulta, favor intente nuevamente.");
+            toastr.error("No existen registros asociados a la consulta.");
         },
         onSettled: () => {
         },

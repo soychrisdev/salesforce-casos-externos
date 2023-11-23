@@ -5,13 +5,17 @@ export default function ErrorBoundary() {
     if (isRouteErrorResponse(error)) {
         return (
             <div>
-                <h1>Oops!</h1>
+                Hay un problema al cargar la pagina, favor presiona el boton "Recargar!"
+                <button type="button" onClick={() => window.location.reload()}>Recargar!</button>
                 <h2>{error.status}</h2>
                 <p>{error.statusText}</p>
                 {error.data?.message && <p>{error.data.message}</p>}
             </div>
         );
     } else {
-        return <div>Oops</div>;
+        return <div>
+            Hay un problema al cargar la pagina, favor presiona el boton "Recargar!"
+            <button type="button" onClick={() => window.location.reload()}>Recargar!</button>
+        </div>;
     }
 }

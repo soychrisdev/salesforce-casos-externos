@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDataCasos } from "../hooks/query/useDataCasos";
-import { usefetchSedes } from "../hooks/query/useSede";
 import { useFormData } from "../hooks/query/useSendForm";
 import { useAmbitoData } from "../hooks/useAmbitoData";
 import { useSubMotivoData } from "../hooks/useSubMotivoData";
@@ -10,7 +9,6 @@ import { useTipoData } from "../hooks/useTipoData";
 import { useAppStore } from "../store/store";
 import LoadingOverlayComponent from "./LoadingOverlay";
 import Select from "./Select";
-import SelectSede from "./SelectSede";
 
 
 
@@ -27,7 +25,7 @@ const FormSectionComponent = (props) => {
 		//@ts-ignore
 		props?.auth?.instance_url,
 	);
-	const { data: dataSedes, isLoading: isLoadingDataSedes } = usefetchSedes();
+	// const { data: dataSedes, isLoading: isLoadingDataSedes } = usefetchSedes();
 
 	const { tipoDataStored } = useTipoData(dataTipoCasos);
 
@@ -51,7 +49,8 @@ const FormSectionComponent = (props) => {
 	);
 
 	const { postForm, status } = useFormData();
-	const handleSubmit = (e: Event) => {
+	const handleSubmit = async (e: Event) => {
+		console.log('a')
 		e.preventDefault();
 
 		//@ts-ignore
@@ -66,7 +65,16 @@ const FormSectionComponent = (props) => {
 		if (!caseDescriptionInput) {
 			//@ts-ignore
 			toastr.error(
-				"La descripción del caso no puede estar en blanco y debe tener 5 caracteres como minimo.",
+				"La descripción del caso no puede estar en blanco y debe tener 5 caracteres como mínimo.",
+			);
+			return;
+		}
+
+
+		if (caseDescriptionInput.length < 5) {
+			//@ts-ignore
+			toastr.error(
+				"La descripción del caso no puede estar en blanco y debe tener 5 caracteres como mínimo.",
 			);
 			return;
 		}
@@ -74,7 +82,7 @@ const FormSectionComponent = (props) => {
 		// Validar que los campos seleccionados no sean nulos
 		if (!ambitoSelected || !tematicaSelected || !tipoDataSelected) {
 			//@ts-ignore
-			toastr.error("Por favor, selecciona todos los campos obligatorios");
+			toastr.error("Debe seleccionar todos los campos obligatorios");
 			return;
 		}
 
@@ -91,21 +99,25 @@ const FormSectionComponent = (props) => {
 			tipoPostulante: tipoDataSelected,
 			nombre: props?.nombre,
 			apellido: props?.apellido,
-			sede: dataSede
+			// sede: dataSede
 		};
 
-		postForm(sendValues);
+		const resp = await postForm(sendValues);
+		console.log("resp: ", JSON.stringify(resp));
+
 	};
 
 	useEffect(() => {
 		if (status === "success") {
+			//@ts-ignore
+			toastr.success("Caso creado con éxito.");
 			setTimeout(() => {
 				//reload webpage
 				navigate(0);
 			}, 1000);
 		}
-	}, [status])
 
+	}, [status])
 
 	const limit = 250; // Set your character limit here
 	const charCount = caseDescription?.length;
@@ -116,10 +128,10 @@ const FormSectionComponent = (props) => {
 
 	if (!dataTipoCasos && !ambitoSelected && !tematicaSelected) return "Loading..."
 
-
 	return (
 		<div className="card">
 			<form id="1" className="needs-validation mt-3" noValidate>
+				{dataSede}
 				{status === "loading" && <LoadingOverlayComponent />}
 				<div className="row">
 
@@ -179,7 +191,7 @@ const FormSectionComponent = (props) => {
 						</div>
 					</div>
 
-					<div className="col-12 col-md-4 mb-3">
+					{/* <div className="col-12 col-md-4 mb-3">
 						<div className="md-form">
 							{isLoadingDataSedes ? 'loading' : <SelectSede
 								id="select-sede"
@@ -191,7 +203,7 @@ const FormSectionComponent = (props) => {
 								disabled={false} />}
 
 						</div>
-					</div>
+					</div> */}
 
 					<div className="col-md-12 mb-4 mt-3 mb-2">
 						<div className="md-form" id="textarea2">

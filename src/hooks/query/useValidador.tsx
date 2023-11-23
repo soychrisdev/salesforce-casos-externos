@@ -26,7 +26,7 @@ const postValidadorData = async (value) => {
     return { status: response.status, data };
 };
 export const useValidador = () => {
-    const { mutate: postForm, error, isLoading, data, isSuccess, isIdle, status, isError } = useMutation(postValidadorData);
+    const { mutateAsync: postForm, error, isLoading, data, isSuccess, isIdle, status, isError } = useMutation(postValidadorData);
 
     return {
         postForm,
