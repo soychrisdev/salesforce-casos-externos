@@ -71,19 +71,10 @@ export default function Select({
 					setTipoDataSelected(e.target.value);
 				}
 			});
-			// if (chosenSelect.length) {
-			// 	startSelects.chosen({
-			// 		disable_search_threshold: 10,
-			// 		no_results_text: "Sin Resultados para: ",
-			// 		width: "100%",
-			// 		placeholder_text_single: "Seleccione...",
-			// 	});
-			// }
 		}
 	}, [data, setTipoDataSelected]);
 
 	if (!data) return 'Loading...'
-
 
 	return (
 		<>

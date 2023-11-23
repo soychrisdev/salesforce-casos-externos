@@ -2,7 +2,6 @@ import { useMutation, useQueryClient } from "react-query";
 
 //@ts-ignore
 const postFormData = async (value) => {
-	console.log(JSON.stringify(value))
 	const toSendObject = {
 		label: value.label[0],
 		rut: value.rut,
@@ -13,7 +12,7 @@ const postFormData = async (value) => {
 		tipoPostulante: value.tipoPostulante,
 		nombre: value.nombre,
 		apellido: value.apellido,
-		// sede: value.sede
+		sede: value.sede
 	};
 
 	const response = await fetch(
@@ -60,6 +59,4 @@ export const useFormData = () => {
 		isLoading
 	};
 };
-//cuestionario de alinamiento de la norma chilena 2770
-//declaracion jurada de planitillas de trraajadores
-//al balance clasificado del periodo 2021
+

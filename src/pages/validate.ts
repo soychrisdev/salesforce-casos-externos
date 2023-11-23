@@ -9,7 +9,6 @@ type UserInfo = {
 	userIsValid: boolean;
 };
 export const validate = (userInfo: UserInfo | undefined) => {
-	console.log("userInfo: ", userInfo);
 	let status = false;
 	//validar nombre y apellido
 	if (userInfo?.name === "" || userInfo?.name === undefined) {

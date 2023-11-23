@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDataCasos } from "../hooks/query/useDataCasos";
+import { usefetchSedes } from "../hooks/query/useSede";
 import { useFormData } from "../hooks/query/useSendForm";
 import { useAmbitoData } from "../hooks/useAmbitoData";
 import { useSubMotivoData } from "../hooks/useSubMotivoData";
@@ -9,6 +10,7 @@ import { useTipoData } from "../hooks/useTipoData";
 import { useAppStore } from "../store/store";
 import LoadingOverlayComponent from "./LoadingOverlay";
 import Select from "./Select";
+import SelectSede from "./SelectSede";
 
 
 
@@ -25,7 +27,7 @@ const FormSectionComponent = (props) => {
 		//@ts-ignore
 		props?.auth?.instance_url,
 	);
-	// const { data: dataSedes, isLoading: isLoadingDataSedes } = usefetchSedes();
+	const { data: dataSedes, isLoading: isLoadingDataSedes } = usefetchSedes();
 
 	const { tipoDataStored } = useTipoData(dataTipoCasos);
 
@@ -50,7 +52,6 @@ const FormSectionComponent = (props) => {
 
 	const { postForm, status } = useFormData();
 	const handleSubmit = async (e: Event) => {
-		console.log('a')
 		e.preventDefault();
 
 		//@ts-ignore
@@ -80,7 +81,7 @@ const FormSectionComponent = (props) => {
 		}
 
 		// Validar que los campos seleccionados no sean nulos
-		if (!ambitoSelected || !tematicaSelected || !tipoDataSelected) {
+		if (!ambitoSelected || !tematicaSelected || !tipoDataSelected || !dataSede) {
 			//@ts-ignore
 			toastr.error("Debe seleccionar todos los campos obligatorios");
 			return;
@@ -99,12 +100,10 @@ const FormSectionComponent = (props) => {
 			tipoPostulante: tipoDataSelected,
 			nombre: props?.nombre,
 			apellido: props?.apellido,
-			// sede: dataSede
+			sede: dataSede
 		};
 
 		const resp = await postForm(sendValues);
-		console.log("resp: ", JSON.stringify(resp));
-
 	};
 
 	useEffect(() => {
@@ -125,13 +124,11 @@ const FormSectionComponent = (props) => {
 	//@ts-ignore
 	if (isLoading && dataTipoCasos?.length < 0) return "Loading..."
 
-
 	if (!dataTipoCasos && !ambitoSelected && !tematicaSelected) return "Loading..."
 
 	return (
 		<div className="card">
 			<form id="1" className="needs-validation mt-3" noValidate>
-				{dataSede}
 				{status === "loading" && <LoadingOverlayComponent />}
 				<div className="row">
 
@@ -156,7 +153,6 @@ const FormSectionComponent = (props) => {
 								isLoading={isLoading}
 								required={true}
 								disabled={false} />}
-
 						</div>
 					</div>
 					<div className="col-12 col-md-4 mb-3">
@@ -173,7 +169,6 @@ const FormSectionComponent = (props) => {
 										? true
 										: false}
 							/>}
-
 						</div>
 					</div>
 
@@ -181,17 +176,16 @@ const FormSectionComponent = (props) => {
 						<div className="md-form">
 							{subMotivoData && <Select
 								id="select-submotivo"
-								label="Submotivo"
+								label="Submotivo (*)"
 								data={subMotivoData}
 								isLoading={isLoading}
 								required={true}
 								disabled={subMotivoData?.length <= 1 && true} />
 							}
-
 						</div>
 					</div>
 
-					{/* <div className="col-12 col-md-4 mb-3">
+					<div className="col-12 col-md-4 mb-3">
 						<div className="md-form">
 							{isLoadingDataSedes ? 'loading' : <SelectSede
 								id="select-sede"
@@ -201,9 +195,8 @@ const FormSectionComponent = (props) => {
 								isLoading={isLoadingDataSedes}
 								required={true}
 								disabled={false} />}
-
 						</div>
-					</div> */}
+					</div>
 
 					<div className="col-md-12 mb-4 mt-3 mb-2">
 						<div className="md-form" id="textarea2">
@@ -255,7 +248,6 @@ const FormSectionComponent = (props) => {
 							onClick={(e: any) => handleSubmit(e)}
 							disabled={status === "loading"}
 						>
-
 							{status === "loading" ? 'Registrando...' : 'Registrar'}
 						</button>
 					</div>
