@@ -30,11 +30,8 @@ const postFormData = async (value) => {
 	);
 
 	const mensaje = await response.json()
-	console.log("mensaje: ", mensaje.Message);
 	if (!response.ok) {
-		const newError = mensaje.Message.replace(/^Error:\s*/, '');
-		throw new Error(newError)
-
+		throw new Error(mensaje.Message);
 	}
 
 	return response;
@@ -48,9 +45,8 @@ export const useFormData = () => {
 			toastr.success("Caso creado con éxito.");
 		},
 		onError: (error) => {
-			console.log("error: ", error);
 			//@ts-ignore
-			toastr.error(error);
+			toastr.error("No se puede ingresar el caso, revise si no esta repetido o ya tiene uno abierto");
 		},
 		onSettled: () => {
 			queryClient.invalidateQueries(["DataCasos"]);
