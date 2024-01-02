@@ -5,7 +5,6 @@ const postFormData = async (value) => {
 	const toSendObject = {
 		label: value.label[0],
 		rut: value.rut,
-		instance_url: value.url,
 		descripcion: value.description,
 		telefono: `56${value.phoneNumber}`,
 		email: value.email,
@@ -20,11 +19,8 @@ const postFormData = async (value) => {
 		`${config?.baseUrl}/api/crearCasoPublico`,
 		{
 			method: "POST",
+			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(toSendObject),
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${value.token}`,
-			},
 		},
 	);
 

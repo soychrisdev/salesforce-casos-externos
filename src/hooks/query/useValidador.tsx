@@ -5,8 +5,6 @@ const postValidadorData = async (value) => {
     const toSendObject = {
         validador: value.validador,
         rut: value.rut,
-        instance_url: value.instance_url
-
     };
 
     const response = await fetch(
@@ -14,11 +12,8 @@ const postValidadorData = async (value) => {
         `${config?.baseUrl}/api/validadorRut`,
         {
             method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(toSendObject),
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${value.token}`,
-            },
         },
     );
 

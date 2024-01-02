@@ -14,11 +14,16 @@ export const router = createBrowserRouter([
 		errorElement: <ErrorBoundary />,
 		children: [
 			{
+				path: "/CRM_SF/SF_CASOS_EXTERNO/consulta",
+				element: <Resultados />,
+			},
+			{
 				element: <PublicLayout />,
 				children: [{
 					index: true,
 					element: <Ingreso />,
-				}]
+				}
+				]
 			},
 			{
 				element: <GuardLayout />,
@@ -27,10 +32,7 @@ export const router = createBrowserRouter([
 						path: "/CRM_SF/SF_CASOS_EXTERNO/ingreso",
 						element: <IngresoCaso />,
 					},
-					{
-						path: "/CRM_SF/SF_CASOS_EXTERNO/consulta",
-						element: <Resultados />,
-					},
+
 					{
 						path: "*",
 						element: <Navigate to="/CRM_SF/SF_CASOS_EXTERNO" />,

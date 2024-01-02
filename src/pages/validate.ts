@@ -11,7 +11,11 @@ type UserInfo = {
 export const validate = (userInfo: UserInfo | undefined) => {
 	let status = false;
 	//validar nombre y apellido
-	if (userInfo?.name === "" || userInfo?.name === undefined) {
+	if (
+		userInfo?.name === "" ||
+		userInfo?.name === undefined ||
+		userInfo.name.length > 50
+	) {
 		return "Nombre inválido!";
 	}
 	if (!validateRut(userInfo?.rut)) {

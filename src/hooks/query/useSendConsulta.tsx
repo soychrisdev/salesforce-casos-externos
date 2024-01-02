@@ -6,7 +6,6 @@ const postFormData = async (value) => {
     const toSendObject = {
         numero: value.numCaso,
         rut: value.rut,
-        url: value.instance_url
 
     };
 
@@ -15,11 +14,8 @@ const postFormData = async (value) => {
         `${config?.baseUrl}/api/dataCasosByRutPublic`,
         {
             method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(toSendObject),
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${value.token}`,
-            },
         },
     );
 

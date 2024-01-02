@@ -21,12 +21,7 @@ const FormSectionComponent = (props) => {
 	const navigate = useNavigate();
 	const { caseDescription, setCaseDescription: setCaseDescrip, dataSede } = useAppStore((state) => state)
 	//@ts-ignore
-	const { data: dataTipoCasos, isLoading } = useDataCasos(
-		//@ts-ignore
-		props?.auth?.access_token,
-		//@ts-ignore
-		props?.auth?.instance_url,
-	);
+	const { data: dataTipoCasos, isLoading } = useDataCasos();
 	const { data: dataSedes, isLoading: isLoadingDataSedes } = usefetchSedes();
 
 	const { tipoDataStored } = useTipoData(dataTipoCasos);
@@ -72,7 +67,7 @@ const FormSectionComponent = (props) => {
 		}
 
 
-		if (caseDescriptionInput.length < 5) {
+		if (caseDescriptionInput.length < 5 || caseDescriptionInput?.length > 250) {
 			//@ts-ignore
 			toastr.error(
 				"La descripción del caso no puede estar en blanco y debe tener 5 caracteres como mínimo.",
@@ -92,9 +87,7 @@ const FormSectionComponent = (props) => {
 		const sendValues = {
 			label: getLabelValue,
 			description: caseDescriptionInput,
-			token: props?.auth?.access_token,
 			email: props?.email,
-			url: props?.auth?.instance_url,
 			rut: props?.rut,
 			phoneNumber: props?.phoneNumber,
 			tipoPostulante: tipoDataSelected,
@@ -103,19 +96,18 @@ const FormSectionComponent = (props) => {
 			sede: dataSede
 		};
 
-		const resp = await postForm(sendValues);
+		await postForm(sendValues);
 	};
 
 	useEffect(() => {
 		if (status === "success") {
 			//@ts-ignore
-			toastr.success("Caso creado con éxito.");
-			setTimeout(() => {
-				//reload webpage
-				navigate(0);
-			}, 1000);
+			// toastr.success("Caso creado con éxito.");
+			// setTimeout(() => {
+			// 	//reload webpage
+			// 	navigate(0);
+			// }, 1000);
 		}
-
 	}, [status])
 
 	const limit = 250; // Set your character limit here

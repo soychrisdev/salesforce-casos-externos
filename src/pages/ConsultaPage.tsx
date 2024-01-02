@@ -1,6 +1,5 @@
 import LoadingOverlayComponent from "../component/LoadingOverlay";
 import TanStackTable from "../component/TanStackTable";
-import { useAuth } from "../hooks/query/useAuth";
 import { useFormConsulta } from "../hooks/query/useSendConsulta";
 import { useAppStore } from "../store/store";
 import { formatRut, validateRut } from "../utils/RutValidator";
@@ -11,7 +10,6 @@ import { formatRut, validateRut } from "../utils/RutValidator";
 export default function ConsultaPage() {
 
 
-  const { data: token } = useAuth();
   const { postForm, isLoading, data, isIdle, isSuccess } = useFormConsulta();
 
   const { setCasosInfo, casosInfo } = useAppStore((state) => state)
@@ -31,8 +29,6 @@ export default function ConsultaPage() {
     const sendValues = {
       rut: casosInfo?.rut,
       numCaso: casosInfo?.numCaso,
-      instance_url: token?.instance_url,
-      token: token?.access_token
     };
 
 
@@ -42,10 +38,6 @@ export default function ConsultaPage() {
     if (!validateRut(sendValues.rut)) return toastr.error("Rut es invalido!");
     //@ts-ignore
     if (sendValues.numCaso === "" || sendValues.numCaso === undefined) return toastr.error("Numero de caso es invalido!");
-    //@ts-ignore
-    if (sendValues.instance_url === "" || sendValues.instance_url === undefined) return toastr.error("Token es invalido!");
-    //@ts-ignore
-    if (sendValues.token === "" || sendValues.token === undefined) return toastr.error("Token es invalido!");
     //@ts-ignore
 
     postForm(sendValues);
@@ -85,6 +77,7 @@ export default function ConsultaPage() {
                 type="text"
                 name="rut"
                 id="rut"
+                autoComplete="off"
                 className="form-control mb-0"
                 placeholder="Ingrese su Rut"
                 onChange={(e) => handleOnChange(e)}

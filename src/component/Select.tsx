@@ -17,7 +17,7 @@ export default function Select({
 	data,
 	disabled,
 }: SelectProps) {
-	const { setAmbito, setTematica, setSubMotivo, setTipoDataSelected, setDataSede } = useAppStore((state) => state);
+	const { ambitoSelected, tematicaSelected, subMotivoSelected, dataSede, tipoDataSelected, setAmbito, setTematica, setSubMotivo, setTipoDataSelected, setDataSede } = useAppStore((state) => state);
 	useEffect(() => {
 		if (data) {
 			const chosenSelect = $(`#${id}`);
@@ -72,7 +72,7 @@ export default function Select({
 				}
 			});
 		}
-	}, [data, setTipoDataSelected]);
+	}, [data, ambitoSelected, tematicaSelected, subMotivoSelected, dataSede, tipoDataSelected]);
 
 	if (!data) return 'Loading...'
 

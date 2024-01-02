@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import LoadingOverlayComponent from "../component/LoadingOverlay";
-import { useAuth } from "../hooks/query/useAuth";
+
 import { useValidador } from "../hooks/query/useValidador";
 import { useAppStore } from "../store/store";
 import { formatRut, validateRut } from "../utils/RutValidator";
@@ -9,7 +9,7 @@ import { validate } from "./validate";
 export default function Ingreso() {
 
     const { userInfo, setUserInfo } = useAppStore((state) => state);
-    const { data: url } = useAuth();
+
     const { postForm: postValidador, isLoading } = useValidador();
     const navigate = useNavigate();
     //@ts-ignore
@@ -27,8 +27,7 @@ export default function Ingreso() {
 
                 validador: "contacto",
                 rut: userInfo?.rut,
-                instance_url: url?.instance_url,
-                token: url?.access_token
+
             })
 
             if (response?.status === 400) {
@@ -90,6 +89,7 @@ export default function Ingreso() {
                                 type="text"
                                 name="rut"
                                 id="rut"
+                                autoComplete="off"
                                 className="form-control mb-0"
                                 placeholder="Ingrese RUT"
                                 // onChange={handleChange}

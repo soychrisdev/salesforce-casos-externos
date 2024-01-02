@@ -1,11 +1,10 @@
 import FormSectionComponent from "../component/FormSectionComponent";
-import { useAuth } from "../hooks/query/useAuth";
+
 import { useAppStore } from "../store/store";
 
 
 export default function IngresoCaso() {
   const { userInfo } = useAppStore((state) => state)
-  const { data: url, isLoading: isLoadingAuth } = useAuth();
 
 
   return (
@@ -17,8 +16,6 @@ export default function IngresoCaso() {
         phoneNumber={userInfo?.phoneNumber}
         nombre={userInfo?.name?.split(" ")[0]}
         apellido={userInfo?.name?.split(" ")[1]}
-        auth={url}
-        isLoadingAuth={isLoadingAuth}
       />
     </div>
 

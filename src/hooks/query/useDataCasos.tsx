@@ -1,19 +1,16 @@
 import { useQuery } from "react-query";
 //@ts-ignore
-const fetchDataCasos = async (token, url) => {
+const fetchDataCasos = async () => {
 	const response = await fetch(
 		//@ts-ignore
 		`${config?.baseUrl}/api/data`,
 		{
 			method: "POST",
+			headers: { "Content-Type": "application/json" },
 
-			body: JSON.stringify({ instance_url: url }),
 			// mode: "cors",
 			// credentials: "include",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${token}`,
-			},
+
 		},
 	);
 
@@ -27,12 +24,11 @@ const fetchDataCasos = async (token, url) => {
 	return data;
 };
 
-export const useDataCasos = (token: string | null, url: string) => {
+export const useDataCasos = () => {
 	return useQuery<[], Error>(
 		["DataTipoCasos"],
-		() => fetchDataCasos(token, url),
+		() => fetchDataCasos(),
 		{
-			enabled: !!token,
 			//@ts-ignore
 			select: (data) => data.filter((item) => item.nombre !== "Estudiante"),
 		},
