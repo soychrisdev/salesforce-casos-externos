@@ -103,10 +103,10 @@ const FormSectionComponent = (props) => {
 		if (status === "success") {
 			//@ts-ignore
 			// toastr.success("Caso creado con éxito.");
-			// setTimeout(() => {
-			// 	//reload webpage
-			// 	navigate(0);
-			// }, 1000);
+			setTimeout(() => {
+				//reload webpage
+				navigate(0);
+			}, 1000);
 		}
 	}, [status])
 
