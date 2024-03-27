@@ -1,16 +1,19 @@
 import { Outlet } from "react-router-dom";
+import { useGetToken } from "../hooks/query/useGetToken";
 import FooterComponent from "./Footer";
 import GlobalLoadingIndicator from "./GlobalLoadingIndicator";
 import HeaderComponent from "./Header";
+import LoadingOverlayComponent from "./LoadingOverlay";
 import Menu from "./Menu";
 
 export default function Layout() {
 
   // const { userInfo, setUserInfo } = useAppStore( useShallow((state) => state);
-
+  const { isLoading } = useGetToken();
 
   return (
     <div>
+      {isLoading && <LoadingOverlayComponent />}
       <GlobalLoadingIndicator />
       <HeaderComponent
         title="Titulo"

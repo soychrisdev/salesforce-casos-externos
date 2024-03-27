@@ -18,6 +18,7 @@ export default function Ingreso() {
         return isValid;
     };
 
+
     const handleSubmit = async () => {
         //@ts-ignore
         if (validate(userInfo) === true) {
@@ -30,15 +31,13 @@ export default function Ingreso() {
 
             })
 
-            if (response?.status === 400) {
-                if (userInfo?.userIsValid === false) {
-                    setUserInfo({ ...userInfo, userIsValid: true })
-
+            if (response?.status === 200) {
+                if (!userInfo?.userIsValid) {
+                    setUserInfo({ ...userInfo, userIsValid: true });
                     navigate("/CRM_SF/SF_CASOS_EXTERNO/ingreso");
-
                 }
             }
-            if (response?.status === 200) {
+            if (response?.status === 400) {
                 //@ts-ignore
                 toastr.error('El rut ingresado corresponde a un Alumno, favor ingrese por su plataforma.');
             }
