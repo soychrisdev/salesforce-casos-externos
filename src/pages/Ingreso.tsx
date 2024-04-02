@@ -39,7 +39,9 @@ export default function Ingreso() {
             }
             if (response?.status === 400) {
                 //@ts-ignore
-                toastr.error('El rut ingresado corresponde a un Alumno, favor ingrese por su plataforma.');
+                toastr.error('Rut no habilitado.');
+                // setUserInfo({ ...userInfo, userIsValid: true });
+                // navigate("/CRM_SF/SF_CASOS_EXTERNO/ingreso");
             }
         } else {
             //@ts-ignore

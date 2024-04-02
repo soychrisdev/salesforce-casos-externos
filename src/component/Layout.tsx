@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import { useGetToken } from "../hooks/query/useGetToken";
-import FooterComponent from "./Footer";
 import GlobalLoadingIndicator from "./GlobalLoadingIndicator";
 import HeaderComponent from "./Header";
 import LoadingOverlayComponent from "./LoadingOverlay";
@@ -26,7 +25,7 @@ export default function Layout() {
         <Outlet />
 
       </div>
-      <FooterComponent />
+      {/* <FooterComponent /> */}
     </div>
   )
 }
