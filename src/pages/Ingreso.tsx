@@ -31,7 +31,7 @@ export default function Ingreso() {
 
             })
 
-            if (response?.status === 200) {
+            if (response?.status !== 200) {
                 if (!userInfo?.userIsValid) {
                     setUserInfo({ ...userInfo, userIsValid: true });
                     navigate("/CRM_SF/SF_CASOS_EXTERNO/ingreso");
