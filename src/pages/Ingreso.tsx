@@ -37,7 +37,7 @@ export default function Ingreso() {
                     navigate("/CRM_SF/SF_CASOS_EXTERNO/ingreso");
                 }
             }
-            if (response?.status === 400) {
+            if (response?.status === 200) {
                 //@ts-ignore
                 toastr.error('Rut no habilitado.');
                 // setUserInfo({ ...userInfo, userIsValid: true });
